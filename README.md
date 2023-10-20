@@ -64,3 +64,7 @@ $ npm install
 | d | docs | 문서 수정 - README or guide 등 |
 | t | test | 테스트 코드 작성 |
 | c | config | config 및 기타 설정 파일 수정 |
+
+### Github Merge Guide
+- 각자의 branch에 commit 이후 원격 저장소에 push
+- 해당 브랜치 pull request 요청
