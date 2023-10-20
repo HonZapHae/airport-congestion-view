@@ -1,46 +1,66 @@
-# Getting Started with Create React App
+# 프로젝트 컨벤션
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+## Getting Stated
 
-In the project directory, you can run:
+### Cloning the GitLab Repository
 
-### `npm start`
+```
+$ git clone https://github.com/YeonHoo-Kim/airport-congestion-view.git
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Installation
 
-### `npm test`
+```
+$ npm install
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
 
-### `npm run build`
+### Project structure (예시)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+├── README.md                      - 리드미 파일
+│
+├── src/                           - 소스 폴더
+│   │
+│   ├── apis/                      - 서비스 API 정의 폴더
+│   │
+│   ├── assets/                    - Image, Font 리소스 폴더
+│   │
+│   ├── components/                - 공통 컴포넌트 폴더
+│   │
+│   ├── interfaces/                - 공통 인터페이스 정의 폴더
+│   │
+│   ├── pages/                     - 화면 정의 폴더
+│   │
+│   ├── stores/                    - MobX 스토어 정의 폴더
+│   │
+│   ├── tests/                      - 각종 테스트 파일 폴더
+│   │
+│   ├── types/                     - 각종 d.ts 정의 폴더
+│   │
+│   ├── utils/                     - 유틸 폴더
+│   │
+│   ├── App.tsx                    - 메인 앱 파일
+│
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Branch & Commit Style
 
-### `npm run eject`
+- Branch Name은 [name]/[objective]/[keyword]로 지정
+    - ex) kyh/d/readme
+- Commit Message는 [[objective]] [message]로 지정
+    - ex) [docs] 설치 가이드 및 브랜치, 커밋 컨벤션을 포함한 README 추가
+    - message는 최대한 상세하게 작성한다.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+| Branch | Commit | Objective |
+| --- | --- | --- |
+| f | feat | 기능 추가, 라이브러리 추가, API 변경 |
+| r | refactor | 코드 구조 변경 - 리팩토링 |
+| b | bugfix | 버그 수정 |
+| d | docs | 문서 수정 - README or guide 등 |
+| t | test | 테스트 코드 작성 |
+| c | config | config 및 기타 설정 파일 수정 |
