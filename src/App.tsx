@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
 import styled from 'styled-components';
+import logo from './logo.svg';
 import './App.css';
 
 const Title = styled.h1`
@@ -15,7 +15,11 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Title>
-          Edit <code>src/App.tsx</code> and save to reload.
+          Edit
+          {' '}
+          <code>src/App.tsx</code>
+          {' '}
+          and save to reload.
         </Title>
         <a
           className="App-link"
