@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import styled from 'styled-components';
 import './App.css';
@@ -7,17 +7,33 @@ import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
+import { DomesticFlightApi } from "./api/domesticFlight";
+// import { IncheonAirportApi } from "./api/incheonAirport";
 
 const Title = styled.h1`
   font-size: 1.5em;
   text-align: center;
-  color: #BF4F74;
+  color: #bf4f74;
 `;
-
-
 
 function App() {
   const [value, setValue] = useState(0);
+  /**
+   * 국제선 api
+   */
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await DomesticFlightApi.fetchDomesticFlight();
+        console.log("res", response);
+      } catch (error) {
+        console.error("fetchDomesticFlightApi error", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div className="App">
     <Container fixed>
