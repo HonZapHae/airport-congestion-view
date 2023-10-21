@@ -1,5 +1,5 @@
-import axios from "axios";
-import { OpenApiUrls } from "../openApiUrls";
+import axios from 'axios';
+import { OpenApiUrls } from '../openApiUrls';
 
 /**
  * 국내선 api
