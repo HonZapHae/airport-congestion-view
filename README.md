@@ -7,7 +7,7 @@
 ### Cloning the GitLab Repository
 
 ```
-$ git clone https://github.com/YeonHoo-Kim/airport-congestion-view.git
+$ git clone https://github.com/HonZapHae/airport-congestion-view.git
 
 ```
 
