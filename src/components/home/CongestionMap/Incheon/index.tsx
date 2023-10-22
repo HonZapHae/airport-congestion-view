@@ -1,23 +1,22 @@
 import React from 'react';
 import { CongestionMapProps } from '../types';
-import Gate from '../Gate';
-import { StyledDiv, StyledIncheonMap } from '../styled';
+import { StyledDiv, StyledIncheonMap1, StyledIncheonMap2 } from '../styled';
+import { TERMINAL, TerminalType } from '../../../../constant';
 
-const GATE_POS = [
-  { top: 67, left: 84 },
-  { top: 54, left: 72 },
-  { top: 47, left: 57 },
-  { top: 47, left: 38 },
-  { top: 54, left: 23 },
-  { top: 67, left: 11 },
-] as const;
+type Props = {
+  terminal: TerminalType;
+} & CongestionMapProps;
 
-function Incheon(props: CongestionMapProps) {
-  const { congestions } = props;
+function Incheon(props: Props) {
+  const { congestions, terminal } = props;
   return (
     <StyledDiv>
-      {GATE_POS.map((v, i) => <Gate key={v.top * v.left} no={i + 1} pos={GATE_POS[i]} />)}
-      <StyledIncheonMap congestions={congestions} />
+      {
+        {
+          [TERMINAL.T1]: <StyledIncheonMap1 congestions={congestions} />,
+          [TERMINAL.T2]: <StyledIncheonMap2 congestions={congestions} />,
+        }[terminal]
+      }
     </StyledDiv>
   );
 }
