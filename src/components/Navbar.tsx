@@ -34,7 +34,7 @@ export function Navbar() {
         textColor="secondary"
         variant="fullWidth"
         sx={{
-          '& MuiTabs-flexContainer': { height: 100 }, bgcolor: 'background.paper', height: 100, width: 390,
+          '& .MuiTabs-flexContainer': { height: 100 }, bgcolor: 'background.paper', height: 100, width: 390,
         }}
         TabIndicatorProps={{ sx: { top: 0, backgroundColor: 'secondary.main' } }}
         value={value}
