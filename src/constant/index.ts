@@ -52,3 +52,10 @@ export type PosType = {
   top: number;
   left: number;
 };
+
+export const TERMINAL = {
+  T1: 1,
+  T2: 2,
+} as const;
+
+export type TerminalType = typeof TERMINAL[keyof typeof TERMINAL];
