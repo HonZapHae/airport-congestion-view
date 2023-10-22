@@ -33,17 +33,6 @@ const BoxContainer = styled.div`
   padding: 30px 26px;
 `;
 
-const CheckList = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-`;
-const CheckListItem = styled.div`
-  display: flex;
-  flex-direction: row;
-  gap: 4px;
-`;
-
 export function Essential() {
   return (
     <StyledDiv>
@@ -51,10 +40,7 @@ export function Essential() {
         <TipNavbar title="여행객 필수품 리스트" />
         <Body>
           <BoxContainer>
-            {/* <CheckList>
-              <CheckListItem>
-              </CheckListItem>
-            </CheckList> */}
+
             <FormGroup>
               <FormControlLabel
                 control={(
