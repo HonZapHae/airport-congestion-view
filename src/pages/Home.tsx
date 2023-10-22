@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
+import Search from '../components/Search';
 // import CongestionDesc from '../components/home/CongestionDesc';
 
 const StyledDiv = styled.div`
@@ -24,10 +25,14 @@ export function Home() {
   };
 
   return (
-    <StyledDiv>
-      홈(혼잡행) 페이지
-      {/* memo:테스트용으로 해놓음  */}
-      {/* <CongestionDesc /> */}
-    </StyledDiv>
+    <>
+      <Search onAirportSelect={handleAirportSelect} />
+      <AirPort>{selectedAirport}</AirPort>
+      <StyledDiv>
+        홈(혼잡행) 페이지
+        {/* memo:테스트용으로 해놓음 */}
+        {/* <CongestionDesc /> */}
+      </StyledDiv>
+    </>
   );
 }
