@@ -1,13 +1,13 @@
 import React from 'react';
 import * as Styled from './styled';
 import Congestion from './Congestion';
-import { congestionInfoArray } from './constants';
+import { CONGESTION_DESC_INFO } from './constants';
 
 function CongestionDesc() {
   return (
     <Styled.Container>
       <Styled.CongestionWrapper>
-        {congestionInfoArray.map(({ color, title }) => (
+        {CONGESTION_DESC_INFO.map(({ color, title }) => (
           <Congestion color={color} title={title} />
         ))}
       </Styled.CongestionWrapper>

@@ -1,4 +1,4 @@
-export const congestionInfoArray = [
+export const CONGESTION_DESC_INFO = [
   {
     id: 1,
     color: 'red',
