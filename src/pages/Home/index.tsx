@@ -26,7 +26,7 @@ export function Home() {
     <Styled.StyledDiv>
       <SwitchButton id="test" checked={checked} onChange={onChange} />
       <Favicon fill={fav ? '#9744F7' : '#F6EFFF'} onClick={clickFav} />
-      <CongestionMap airportCode="CJU" />
+      <CongestionMap airportCode="ICN" />
       홈(혼잡행) 페이지
       {/* memo:테스트용으로 해놓음  */}
       {/* <CongestionDesc /> */}

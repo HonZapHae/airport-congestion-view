@@ -27,7 +27,7 @@ function CongestionMap(props: Props) {
     case AIRPORT_CODE.JEJU:
       return <Jeju congestions={[1, 3, 2, 4]} />;
     default:
-      return <Incheon congestions={[1, 3, 2, 4]} />;
+      return <Incheon congestions={[1, 3, 2, 4]} terminal={1} />;
   }
 }
 
