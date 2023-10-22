@@ -3,9 +3,9 @@ import {
   Tabs, Tab, createTheme, ThemeProvider,
 } from '@mui/material';
 import { Link } from 'react-router-dom';
-import FlightIcon from '@mui/icons-material/Flight';
-import LuggageIcon from '@mui/icons-material/Luggage';
-import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
+import { ReactComponent as Airplane } from '../resources/icons/airplane_icon.svg';
+import { ReactComponent as Car } from '../resources/icons/car_icon.svg';
+import { ReactComponent as Luggage } from '../resources/icons/luggage_icon.svg';
 
 const theme = createTheme({
   palette: {
@@ -30,10 +30,19 @@ export function Navbar() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Tabs textColor="secondary" sx={{ bgcolor: 'background.paper' }} TabIndicatorProps={{ sx: { top: 0, backgroundColor: 'secondary.main' } }} value={value} onChange={handleChange}>
-        <Tab icon={<FlightIcon />} sx={{ color: 'text.primary' }} label="홈" to="/" component={Link} />
-        <Tab icon={<DirectionsCarIcon />} sx={{ color: 'text.primary' }} label="주차장" to="/parking" component={Link} />
-        <Tab icon={<LuggageIcon />} sx={{ color: 'text.primary' }} label="공항이용팁" to="/tip" component={Link} />
+      <Tabs
+        textColor="secondary"
+        variant="fullWidth"
+        sx={{
+          '& MuiTabs-flexContainer': { height: 100 }, bgcolor: 'background.paper', height: 100, width: 390,
+        }}
+        TabIndicatorProps={{ sx: { top: 0, backgroundColor: 'secondary.main' } }}
+        value={value}
+        onChange={handleChange}
+      >
+        <Tab icon={<Airplane fill={value === 0 ? '#e9daff' : '#a766f2'} />} sx={{ color: 'text.primary' }} label="혼잡도 뷰" to="/" component={Link} />
+        <Tab icon={<Car fill={value === 1 ? '#e9daff' : '#a766f2'} />} sx={{ color: 'text.primary' }} label="주차장" to="/parking" component={Link} />
+        <Tab icon={<Luggage fill={value === 2 ? '#e9daff' : '#a766f2'} />} sx={{ color: 'text.primary' }} label="공항이용 팁" to="/tip" component={Link} />
       </Tabs>
     </ThemeProvider>
 
