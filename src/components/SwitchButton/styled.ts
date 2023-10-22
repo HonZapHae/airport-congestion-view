@@ -1,7 +1,6 @@
-import React from 'react';
 import { styled, Switch } from '@mui/material';
 
-const StyledSwitch = styled(Switch)(() => ({
+export const StyledSwitch = styled(Switch)(() => ({
   padding: 8,
   '& .MuiSwitch-switchBase': {
     '&.Mui-checked': {
@@ -50,14 +49,3 @@ const StyledSwitch = styled(Switch)(() => ({
   },
 
 }));
-
-type SwitchProps = {
-  id:string,
-  checked: boolean;
-  onChange : (event: React.ChangeEvent<HTMLInputElement>) => void;
-}
-export default function SwitchButton({ id, onChange, checked }:SwitchProps) {
-  return (
-    <StyledSwitch id={id} onChange={onChange} checked={checked} />
-  );
-}

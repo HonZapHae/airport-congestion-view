@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import * as Styled from './styled';
+import SwitchButton from '../../components/SwitchButton';
 // import CongestionDesc from '../components/home/CongestionDesc';
 
 export function Home() {
@@ -10,8 +11,13 @@ export function Home() {
     setSelectedAirport(airportName);
   };
 
+  const [checked, setChecked] = useState(true);
+  const onChange = () => {
+    setChecked(!checked);
+  };
   return (
     <Styled.StyledDiv>
+      <SwitchButton id="test" checked={checked} onChange={onChange} />
       홈(혼잡행) 페이지
       {/* memo:테스트용으로 해놓음  */}
       {/* <CongestionDesc /> */}
