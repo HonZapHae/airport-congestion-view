@@ -44,7 +44,7 @@ export function Home() {
     <Styled.StyledDiv>
       <SwitchButton id="test" checked={checked} onChange={onChange} />
       <Favicon fill={fav ? '#9744F7' : '#F6EFFF'} onClick={clickFav} />
-      <CongestionMap airportCode="ICN" />
+      <CongestionMap airportCode="ICN" terminalCode={checked} />
       홈(혼잡행) 페이지
       <IconButton
         onClick={handleRefresh}
