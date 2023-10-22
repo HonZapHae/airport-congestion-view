@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import * as Styled from './styled';
 import Congestion from './Congestion';
 import { CONGESTION_DESC_INFO } from './constants';

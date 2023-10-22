@@ -12,6 +12,7 @@ export const AirPort = styled.div`
   font-size: 32px;
   margin-top: 120px;
 `;
+
 export const Time = styled.h1`
   font-size: 65px;
 `;
