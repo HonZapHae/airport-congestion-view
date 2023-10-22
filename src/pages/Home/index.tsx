@@ -52,6 +52,9 @@ export function Home() {
           '&.MuiButtonBase-root.MuiButton-root': {
             minWidth: '15px',
           },
+          '& .MuiButton-startIcon': {
+            margin: '0px',
+          },
         }}
         startIcon={<Refresh />}
       />
