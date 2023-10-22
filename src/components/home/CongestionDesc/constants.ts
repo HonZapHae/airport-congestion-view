@@ -1,27 +1,29 @@
+import { CONGESTION_COLOR, CONGESTION_LVL, CONGESTION_TXT } from '../../../constant';
+
 export const CONGESTION_DESC_INFO = [
   {
-    id: 1,
-    color: 'red',
-    title: '매우 혼잡',
+    id: CONGESTION_LVL.GOOD,
+    color: CONGESTION_COLOR.GOOD,
+    title: CONGESTION_TXT.GOOD,
   },
   {
-    id: 2,
-    color: 'yellow',
-    title: '혼잡',
+    id: CONGESTION_LVL.NORMAL,
+    color: CONGESTION_COLOR.NORMAL,
+    title: CONGESTION_TXT.NORMAL,
   },
   {
-    id: 3,
-    color: 'green',
-    title: '보통',
+    id: CONGESTION_LVL.BAD,
+    color: CONGESTION_COLOR.BAD,
+    title: CONGESTION_TXT.BAD,
   },
   {
-    id: 4,
-    color: '#8b00ff',
-    title: '원할',
+    id: CONGESTION_LVL.VERY_BAD,
+    color: CONGESTION_COLOR.VERY_BAD,
+    title: CONGESTION_TXT.VERY_BAD,
   },
   {
-    id: 5,
-    color: 'gray',
-    title: '운영중지',
+    id: CONGESTION_LVL.CLOSED,
+    color: CONGESTION_COLOR.CLOSED,
+    title: CONGESTION_TXT.CLOSED,
   },
 ];

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import IconButton from '@mui/material/Button';
+<<<<<<< HEAD
 import { DomesticFlightApi } from '../../api/domesticFlight';
 import Search from '../../components/Search';
 // import CongestionDesc from '../components/home/CongestionDesc';
@@ -10,6 +11,17 @@ const AirPort = styled.div`
   margin-top: 120px;
 `;
 
+=======
+import * as Styled from './styled';
+import SwitchButton from '../../components/SwitchButton';
+import { ReactComponent as Favicon } from '../../resources/icons/fav_icon.svg';
+import CongestionMap from '../../components/home/CongestionMap';
+import { DomesticFlightApi } from '../../api/domesticFlight';
+import { IncheonAirportApi } from '../../api/incheonAirport';
+import { ReactComponent as Refresh } from '../../resources/icons/refresh_icon.svg';
+// import CongestionDesc from '../components/home/CongestionDesc';
+
+>>>>>>> 62e0be18aff4963431fed04b603163b57518ed59
 export function Home() {
   const [selectedAirport, setSelectedAirport] = useState('김포국제공항');
 
@@ -44,8 +56,11 @@ export function Home() {
     <Styled.StyledDiv>
       <SwitchButton id="test" checked={checked} onChange={onChange} />
       <Favicon fill={fav ? '#9744F7' : '#F6EFFF'} onClick={clickFav} />
+<<<<<<< HEAD
       <Search onAirportSelect={handleAirportSelect} />
       <AirPort>{selectedAirport}</AirPort>
+=======
+>>>>>>> 62e0be18aff4963431fed04b603163b57518ed59
       <CongestionMap airportCode="ICN" terminalCode={checked} />
       홈(혼잡행) 페이지
       <IconButton
