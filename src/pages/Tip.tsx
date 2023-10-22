@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { Outlet, useNavigate } from 'react-router-dom';
 import { ReactComponent as Checklist } from '../resources/icons/icon-checklist-24.svg';
 import { ReactComponent as Ticket } from '../resources/icons/icon-ticket.svg';
 import { ReactComponent as Car } from '../resources/icons/icon-car.svg';
@@ -46,10 +47,9 @@ const WrapperIcon = styled.div`
 const IconBox = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: center;
   align-items: center;
-  padding-bottom: 8px;
-  gap: 5px;
+  gap: 8px;
   border-radius: 8px;
   background-color: #faf9fc;
   width: 106px;
@@ -108,6 +108,8 @@ const ListItemLeft = styled.div`
 `;
 
 export function Tip() {
+  const navigate = useNavigate();
+
   return (
     <StyledDiv>
       <Wrapper>
@@ -119,33 +121,37 @@ export function Tip() {
           공항이용팁을 알려드릴게요
         </Title>
         <WrapperIcon>
-          <IconBox>
-            <Checklist />
+          <IconBox
+            onClick={() => {
+              navigate('/checklist');
+            }}
+          >
+            <Checklist style={{ marginTop: '18px' }} />
             해외출국 전
             {' '}
             <br />
             {' '}
             체크사항
           </IconBox>
-          <IconBox>
+          <IconBox
+            onClick={() => {
+              navigate('/depatureprocess');
+            }}
+          >
             <Ticket />
-            해외출국 전
-            {' '}
-            <br />
-            {' '}
-            체크사항
+            출국절차
           </IconBox>
           <IconBox>
             <Car />
-            해외출국 전
-            {' '}
-            <br />
-            {' '}
-            체크사항
+            주차정보
           </IconBox>
         </WrapperIcon>
         <List>
-          <ListItem>
+          <ListItem
+            onClick={() => {
+              navigate('/notallowed');
+            }}
+          >
             <ListItemContent>
               <ListItemLeft>
                 <Exclamation />
@@ -155,7 +161,11 @@ export function Tip() {
             </ListItemContent>
             <Divider />
           </ListItem>
-          <ListItem>
+          <ListItem
+            onClick={() => {
+              navigate('/essential');
+            }}
+          >
             <ListItemContent>
               <ListItemLeft>
                 <Luggage />
@@ -165,7 +175,11 @@ export function Tip() {
             </ListItemContent>
             <Divider />
           </ListItem>
-          <ListItem>
+          <ListItem
+            onClick={() => {
+              navigate('/minbaggage');
+            }}
+          >
             <ListItemContent>
               <ListItemLeft>
                 <Scale />
@@ -175,7 +189,11 @@ export function Tip() {
             </ListItemContent>
             <Divider />
           </ListItem>
-          <ListItem>
+          <ListItem
+            onClick={() => {
+              navigate('/businfo');
+            }}
+          >
             <ListItemContent>
               <ListItemLeft>
                 <Bus />
@@ -185,7 +203,11 @@ export function Tip() {
             </ListItemContent>
             <Divider />
           </ListItem>
-          <ListItem>
+          <ListItem
+            onClick={() => {
+              navigate('/airportphone');
+            }}
+          >
             <ListItemContent>
               <ListItemLeft>
                 <Phone />
@@ -195,6 +217,7 @@ export function Tip() {
             </ListItemContent>
           </ListItem>
         </List>
+        <Outlet />
       </Wrapper>
     </StyledDiv>
   );

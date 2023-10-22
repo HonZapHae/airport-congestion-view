@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { useNavigate } from 'react-router-dom';
 import { ReactComponent as ArrowLeft } from '../../resources/icons/icon-arrow-left.svg';
 
 interface TipNavbarProps {
@@ -28,8 +29,9 @@ const Title = styled.div`
 `;
 
 export function TipNavbar({ title }: TipNavbarProps) {
+  const navigate = useNavigate();
   return (
-    <NavBar>
+    <NavBar onClick={() => navigate(-1)}>
       <ArrowLeft />
       <Title>{title}</Title>
     </NavBar>

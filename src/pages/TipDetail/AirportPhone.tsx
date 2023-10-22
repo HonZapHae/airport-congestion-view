@@ -84,7 +84,7 @@ export function AirportPhone() {
               <ListBody>1661-2626</ListBody>
             </ListItem>
             <ListItem>
-              <ListTitle>대구공항</ListTitle>
+              <ListTitle>대구공항</ListTitle>
               <ListBody>053-980-5252</ListBody>
             </ListItem>
           </List>
