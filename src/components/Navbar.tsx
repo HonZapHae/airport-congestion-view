@@ -3,7 +3,7 @@ import { Tabs, Tab } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 export function Navbar() {
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = useState(0);
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
