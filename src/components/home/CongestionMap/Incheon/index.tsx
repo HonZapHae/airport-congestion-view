@@ -12,10 +12,9 @@ function Incheon(props: Props) {
   return (
     <StyledDiv>
       {
-        {
-          [TERMINAL.T1]: <StyledIncheonMap1 congestions={congestions} />,
-          [TERMINAL.T2]: <StyledIncheonMap2 congestions={congestions} />,
-        }[terminal]
+        terminal === TERMINAL.T1
+          ? <StyledIncheonMap1 congestions={congestions} />
+          : <StyledIncheonMap2 congestions={congestions} />
       }
     </StyledDiv>
   );
