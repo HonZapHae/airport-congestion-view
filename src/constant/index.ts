@@ -54,8 +54,8 @@ export type PosType = {
 };
 
 export const TERMINAL = {
-  T1: 1,
-  T2: 2,
+  T1: true,
+  T2: false,
 } as const;
 
 export type TerminalType = typeof TERMINAL[keyof typeof TERMINAL];

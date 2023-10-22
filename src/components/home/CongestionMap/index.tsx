@@ -1,6 +1,5 @@
 import React from 'react';
-
-import { AIRPORT_CODE, AirportCodeType } from '../../../constant';
+import { AIRPORT_CODE, AirportCodeType, TerminalType } from '../../../constant';
 import Cheongju from './Cheongju';
 import Daegu from './Daegu';
 import Gimhae from './Gimhae';
@@ -10,10 +9,11 @@ import Jeju from './Jeju';
 
 type Props = {
     airportCode: AirportCodeType;
+    terminalCode: TerminalType;
 };
 
 function CongestionMap(props: Props) {
-  const { airportCode } = props;
+  const { airportCode, terminalCode } = props;
 
   switch (airportCode) {
     case AIRPORT_CODE.Cheongju:
@@ -27,7 +27,7 @@ function CongestionMap(props: Props) {
     case AIRPORT_CODE.JEJU:
       return <Jeju congestions={[1, 3, 2, 4]} />;
     default:
-      return <Incheon congestions={[1, 3, 2, 4]} terminal={1} />;
+      return <Incheon congestions={[1, 3, 2, 4]} terminal={terminalCode} />;
   }
 }
 
