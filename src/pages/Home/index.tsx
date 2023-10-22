@@ -3,7 +3,6 @@ import styled from '@emotion/styled';
 import * as Styled from './styled';
 import SwitchButton from '../../components/SwitchButton';
 import { ReactComponent as Favicon } from '../../resources/icons/fav_icon.svg';
-import CongestionMap from '../../components/home/CongestionMap';
 // import CongestionDesc from '../components/home/CongestionDesc';
 
 export function Home() {
@@ -26,7 +25,6 @@ export function Home() {
     <Styled.StyledDiv>
       <SwitchButton id="test" checked={checked} onChange={onChange} />
       <Favicon fill={fav ? '#9744F7' : '#F6EFFF'} onClick={clickFav} />
-      <CongestionMap airportCode="CJU" />
       홈(혼잡행) 페이지
       {/* memo:테스트용으로 해놓음  */}
       {/* <CongestionDesc /> */}
