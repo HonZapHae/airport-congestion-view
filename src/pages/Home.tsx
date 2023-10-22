@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
-import Search from '../components/Search';
 // import CongestionDesc from '../components/home/CongestionDesc';
 
 const StyledDiv = styled.div`
