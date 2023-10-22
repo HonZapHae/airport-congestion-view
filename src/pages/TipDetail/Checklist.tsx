@@ -19,37 +19,17 @@ const Wrapper = styled.div`
   padding: 0 24px;
 `;
 
-const NavBar = styled.div`
-  top: 0;
-  width: 100%;
-  position: fixed;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 16px;
-  background-color: white;
-  padding-top: 48px;
-  padding-bottom: 16px;
-  z-index: 33333;
-`;
-
-const Title = styled.div`
-  color: #191919;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 150%; /* 30px */
-`;
-
 const Body = styled.div`
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  margin-top: 144px;
 `;
 
 const Info = styled.div`
   display: flex;
   flex-direction: column;
   /* margin-top: 400px; */
-  margin-top: 144px;
+  
   padding-bottom: 48px;
   gap: 80px;
 `;
