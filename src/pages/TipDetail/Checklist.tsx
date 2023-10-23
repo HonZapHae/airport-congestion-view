@@ -10,7 +10,6 @@ const StyledDiv = styled.div`
   flex-direction: column;
   width: 100%;
   height: 100vh;
-  max-width: 393px;
 `;
 
 const Wrapper = styled.div`
@@ -22,16 +21,15 @@ const Wrapper = styled.div`
 const Body = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 144px;
+  margin-top: 132px;
 `;
 
 const Info = styled.div`
   display: flex;
   flex-direction: column;
   /* margin-top: 400px; */
-  
-  padding-bottom: 48px;
-  gap: 80px;
+  padding-bottom: 144px;
+  gap: 64px;
 `;
 
 const InfoContainer = styled.div`

@@ -7,7 +7,6 @@ const StyledDiv = styled.div`
   flex-direction: column;
   width: 100%;
   height: 100vh;
-  max-width: 393px;
 `;
 
 const Wrapper = styled.div`
@@ -20,7 +19,7 @@ const Body = styled.div`
 display: flex;
 flex-direction: column;
 margin-top: 144px;
-padding-bottom: 80px;
+padding-bottom: 120px;
 `;
 
 const List = styled.div`
@@ -115,13 +114,20 @@ export function DepartureProcess() {
                   인천공항의 경우 게이트 번호에 따라 탑승위치가 다를 수 있으니
                   아래 표를 참고해주세요.
                 </ListThirdItem>
-                <table style={{
-                  border: '1px solid white', borderCollapse: 'collapse', borderRadius: '6px', overflow: 'hidden',
-                }}
-                >
-                  <tr style={{
-                    backgroundColor: '#323646', color: 'white', borderColor: 'none',
+                <table
+                  style={{
+                    border: '1px solid white',
+                    borderCollapse: 'collapse',
+                    borderRadius: '6px',
+                    overflow: 'hidden',
                   }}
+                >
+                  <tr
+                    style={{
+                      backgroundColor: '#323646',
+                      color: 'white',
+                      borderColor: 'none',
+                    }}
                   >
                     <th
                       style={{
