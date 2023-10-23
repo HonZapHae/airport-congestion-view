@@ -55,6 +55,5 @@
   },
   "overrides": {
     "typescript": "^5.2.2"
-  },
-  "proxy": "https://app.map.naver.com"
+  }
 }
