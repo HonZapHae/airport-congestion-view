@@ -7,7 +7,6 @@ const StyledDiv = styled.div`
   flex-direction: column;
   width: 100%;
   height: 100vh;
-  max-width: 393px;
 `;
 
 const Wrapper = styled.div`
@@ -20,7 +19,7 @@ const Body = styled.div`
 display: flex;
 flex-direction: column;
 margin-top: 144px;
-padding-bottom: 80px;
+padding-bottom: 120px;
 `;
 
 const List = styled.div`
