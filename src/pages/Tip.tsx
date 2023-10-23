@@ -59,10 +59,10 @@ const IconBox = styled.div`
   color: #191919;
   cursor: pointer;
   &:hover {
-    background-color: #f2f0f5;
+    background-color: #f8f5ff;
   }
   &:active {
-    background-color: #f2f0f5;
+    background-color: #f8f5ff;
   }
 `;
 
@@ -78,10 +78,10 @@ const ListItem = styled.div`
   cursor: pointer;
   transition: 0.3s all ease-in-out;
   &:hover {
-    background-color: #f2f0f5;
+    background-color: #f8f5ff;
   }
   &:active {
-    background-color: #f2f0f5;
+    background-color: #f8f5ff;
   }
 `;
 const ListItemContent = styled.div`

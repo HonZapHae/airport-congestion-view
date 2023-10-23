@@ -40,10 +40,10 @@ const ListItem = styled.div`
   padding: 24px 20px;
   cursor: pointer;
   &:hover {
-    background-color: #f2f0f5;
+    background-color: #f8f5ff;
   }
   &:active {
-    background-color: #f2f0f5;
+    background-color: #f8f5ff;
   }
 `;
 
