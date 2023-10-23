@@ -43,6 +43,8 @@ export default function Search({ onAirportSelect, options }: SearchProps) {
           boxShadow: 'none',
           border: '1px solid #DBDBDB',
           '&:hover': { border: '1px solid #631EC6' },
+          '&:focus': { border: '1px solid #631EC6' },
+          '&:active': { border: '1px solid #631EC6' },
         }}
         onClick={toggleDropdown}
       >
@@ -93,13 +95,15 @@ export default function Search({ onAirportSelect, options }: SearchProps) {
               flexDirection: 'column',
               width: '100%',
               bgcolor: 'background.paper',
-              padding: '0',
+              padding: '12px 0',
+              // paddingTop: '12px',
               position: 'absolute',
               top: '50px',
               backgroundColor: '#FAF9FC',
               borderRadius: '0 0 6px 6px',
               overflow: 'hidden',
               zIndex: '4444',
+              boxShadow: '0px 4px 8px 0px rgba(0,0,0,0.05)',
             }}
           >
             {options.map((airport) => {
@@ -107,7 +111,13 @@ export default function Search({ onAirportSelect, options }: SearchProps) {
               return (
                 <ListItem
                   key={airport.code}
-                  sx={{ width: 'auto', backgroundColor: '#FAF9FC' }}
+                  sx={{
+                    width: 'auto',
+                    backgroundColor: '#FAF9FC',
+                    '&:hover': {
+                      backgroundColor: '#fcfbff',
+                    },
+                  }}
                   onClick={() => {
                     handleAirportClick(airport);
                     toggleDropdown();
