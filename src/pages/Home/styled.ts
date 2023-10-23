@@ -44,6 +44,49 @@ export const RefreshDesc = styled.p`
   line-height: normal;
 `;
 
-export const Time = styled.h1`
-  font-size: 65px;
+export const Time = styled.p`
+  color:#631EC6;
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 72px;
+  margin : 0px
+`;
+
+export const NotificationWrapper = styled.div`
+  margin-top:5px;
+  display:flex;
+  align-items: center;
+`;
+export const Notification = styled.p`
+  margin-left: 8px;
+  margin-bottom: 3px;
+  margin-top: 3px;
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 30px;
+`;
+
+export const NotificationPuple = styled.span`
+  color: #631EC6;
+`;
+
+export const StayTime = styled.p`
+  margin-top:0px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+`;
+
+export const Minute = styled.p`
+  margin-bottom: 11px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+`;
+
+export const TimeWrapper = styled.div`
+  margin-top:0px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 `;
