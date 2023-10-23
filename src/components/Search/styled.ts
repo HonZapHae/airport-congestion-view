@@ -7,8 +7,7 @@ export const Wrapper = styled.div`
   position: relative;
   width: 100%;
   max-width: 500px;
-  min-width: 350px;
-  cursor: pointer;
+  min-width: 300px;
   z-index: 10;
 `;
 
