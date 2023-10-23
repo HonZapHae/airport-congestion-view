@@ -51,7 +51,6 @@
 
 # 🛫 기능소개
 
-<div align="middle">
     
 ## 공항별 출국장 혼잡도 한눈에 보기
 ![](https://hackmd.io/_uploads/HJtFMJEMp.png)
@@ -84,4 +83,3 @@
 - 기내반입금지물품
 - 여행객 필수품 리스트 등
 
-</div>
