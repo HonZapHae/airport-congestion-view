@@ -1,20 +1,22 @@
 import React, { useState } from 'react';
 import IconButton from '@mui/material/Button';
+import { AirportName } from './constants';
 import * as Styled from './styled';
-import Search from '../../components/Search';
-import SwitchButton from '../../components/SwitchButton';
-import { ReactComponent as Favicon } from '../../resources/icons/fav_icon.svg';
-import CongestionMap from '../../components/home/CongestionMap';
 import { DomesticFlightApi } from '../../api/domesticFlight';
 import { IncheonAirportApi } from '../../api/incheonAirport';
+import CongestionDesc from '../../components/home/CongestionDesc';
+import CongestionMap from '../../components/home/CongestionMap';
+import Search from '../../components/Search';
+import SwitchButton from '../../components/SwitchButton';
+import { AIRPORT_CODE, AIRPORT_NM, AirportCodeType } from '../../constant';
+import { ReactComponent as Favicon } from '../../resources/icons/fav_icon.svg';
 import { ReactComponent as Refresh } from '../../resources/icons/refresh_icon.svg';
-// import CongestionDesc from '../components/home/CongestionDesc';
 
 export function Home() {
-  const [selectedAirport, setSelectedAirport] = useState('김포국제공항');
+  const [selectedAirport, setSelectedAirport] = useState<AirportCodeType>(AIRPORT_CODE.INCHEON);
 
-  const handleAirportSelect = (airportName: string) => {
-    setSelectedAirport(airportName);
+  const handleAirportSelect = (airportCode: AirportCodeType) => {
+    setSelectedAirport(airportCode);
   };
 
   const [fav, setFav] = useState(true);
@@ -41,30 +43,32 @@ export function Home() {
   };
 
   return (
-    <Styled.StyledDiv>
-      <SwitchButton id="test" checked={checked} onChange={onChange} />
-      <Favicon fill={fav ? '#9744F7' : '#F6EFFF'} onClick={clickFav} />
-      <Search onAirportSelect={handleAirportSelect} />
-      <Styled.AirPort>{selectedAirport}</Styled.AirPort>
-      <CongestionMap airportCode="ICN" terminalCode={checked} />
-      홈(혼잡행) 페이지
-      <IconButton
-        onClick={handleRefresh}
-        sx={{
-          '&.MuiButtonBase-root.MuiButton-root': {
-            minWidth: '15px',
-          },
-          '& .MuiButton-startIcon': {
-            margin: '0px',
-          },
-        }}
-        startIcon={<Refresh />}
-      />
-      {/* memo:테스트용으로 해놓음  */}
-      {/* <CongestionDesc /> */}
-      <h2>국내선 탑승수속 소요시간안내</h2>
-      <span>탑승까지 평균 체류기간</span>
-      <Styled.Time>55분</Styled.Time>
-    </Styled.StyledDiv>
+    <Styled.Wrapper>
+      <Search onAirportSelect={handleAirportSelect} options={AirportName} />
+      <Styled.Header>
+        <SwitchButton checked={checked} onChange={onChange} />
+        <Favicon fill={fav ? '#9744F7' : '#F6EFFF'} onClick={clickFav} />
+      </Styled.Header>
+      <CongestionMap airportCode="ICN" terminalCode={!checked} />
+      <Styled.CongestionDescWrapper>
+        <Styled.RefreshWrapper>
+          <Styled.RefreshDesc>PM 1:30 업데이트 됨</Styled.RefreshDesc>
+          <IconButton
+            onClick={handleRefresh}
+            sx={{
+              '&.MuiButtonBase-root.MuiButton-root': {
+                minWidth: '17px',
+                padding: 0,
+              },
+              '& .MuiButton-startIcon': {
+                margin: '0px',
+              },
+            }}
+            startIcon={<Refresh />}
+          />
+        </Styled.RefreshWrapper>
+        <CongestionDesc />
+      </Styled.CongestionDescWrapper>
+    </Styled.Wrapper>
   );
 }

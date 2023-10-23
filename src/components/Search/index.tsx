@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import styled from '@emotion/styled';
 
 import {
   Avatar, List, ListItem, ListItemAvatar, ListItemButton, ListItemText,
@@ -11,54 +10,39 @@ import SearchIcon from '@mui/icons-material/Search';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import NorthWestIcon from '@mui/icons-material/NorthWest';
 import FlightLandIcon from '@mui/icons-material/FlightLand';
+import { Wrapper, WrapperFake } from './styled';
+import {
+  AIRPORT_CODE,
+  AIRPORT_INDEX,
+  AIRPORT_NM,
+  AirportCodeType,
+  AirportIndexType,
+  AirportNmType,
+  AirportParkingType,
+} from '../../constant';
 
-interface SearchProps {
-  onAirportSelect: (airportName: string) => void;
+type ListItemType = {
+    code: string;
+    name: string;
+};
+
+type SearchProps = {
+  onAirportSelect: (airportCode: AirportCodeType) => void,
+  options: ListItemType[],
 }
 
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-  position: fixed;
-  top: 16px;
-`;
+export default function Search({ onAirportSelect, options }: SearchProps) {
+  const [values, setValues] = useState<string>(AIRPORT_NM.INCHEON);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
-const WrapperFake = styled.div`
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  background-color: transparent;
-
-`;
-
-export default function Search({ onAirportSelect }: SearchProps) {
-  const [values, setValues] = useState('김포국제공항');
-  // const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //   setValues(event.target.value);
-  // };
-
-  const [isOpen, setIsOpen] = useState(false);
   const toggleDropdown = () => {
     setIsOpen(!isOpen); // 현재 상태의 반대 값을 설정합니다.
   };
 
-  const [selectedAirport, setSelectedAirport] = useState<string | null>(null);
-
-  const handleAirportClick = (airport: string) => {
-    setSelectedAirport(airport);
-    onAirportSelect(airport);
-    setValues(airport);
+  const handleAirportClick = (airportCode: AirportCodeType) => {
+    onAirportSelect(airportCode);
+    setValues(options.find(((v) => v.code === airportCode))?.name || '');
   };
-
-  const airportList = [
-    '김포국제공항',
-    '인천국제공항',
-    '청주국제공항',
-    '제주국제공항',
-    '김포공항',
-    '김포공항',
-  ];
 
   return (
     <Wrapper>
@@ -66,7 +50,7 @@ export default function Search({ onAirportSelect }: SearchProps) {
         component="form"
         sx={{
           p: '2px 4px',
-
+          display: 'flex',
           alignItems: 'center',
           boxShadow: 'none',
           border: '1px solid #DBDBDB',
@@ -130,14 +114,14 @@ export default function Search({ onAirportSelect }: SearchProps) {
               zIndex: '4444',
             }}
           >
-            {airportList.map((airport) => {
-              const labelId = `checkbox-list-secondary-label-${airport}`;
+            {options.map((airport) => {
+              const labelId = `checkbox-list-secondary-label-${airport.code}`;
               return (
                 <ListItem
-                  key={airport}
+                  key={airport.code}
                   sx={{ width: 'auto', backgroundColor: '#FAF9FC' }}
                   onClick={() => {
-                    handleAirportClick(airport);
+                    handleAirportClick(airport.code as AirportCodeType);
                     toggleDropdown();
                   }}
                   secondaryAction={(
@@ -166,7 +150,7 @@ export default function Search({ onAirportSelect }: SearchProps) {
                         <FlightLandIcon sx={{ color: '#CFB4F6' }} />
                       </IconButton>
                     </ListItemAvatar>
-                    <ListItemText id={labelId} primary={`${airport}`} />
+                    <ListItemText id={labelId} primary={`${airport.name}`} />
                   </ListItemButton>
                 </ListItem>
               );

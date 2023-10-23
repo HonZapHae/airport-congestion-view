@@ -10,7 +10,7 @@ function Congestion({ color, title }: Props) {
   return (
     <Styled.Container>
       <Styled.ColorBox color={color} title={title} />
-      <span>{title}</span>
+      <Styled.Text>{title}</Styled.Text>
     </Styled.Container>
   );
 }
