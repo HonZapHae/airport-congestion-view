@@ -14,12 +14,42 @@ export const Wrapper = styled.div`
   gap: 16px;
 `;
 
-export const Title = styled.div`
+export const TitleContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+`;
+
+export const TitleWrapper = styled.div`
   width: 100%;
-  color: #000;
-  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+`;
+
+export const Title = styled.p`
+  color: #191919;
+  font-size: 20px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 900;
+  line-height: 150%; 
+`;
+
+export const RefreshWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+`;
+
+export const RefreshDesc = styled.p`
+  margin: 0;
+  color: #808080;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
   line-height: normal;
 `;
 

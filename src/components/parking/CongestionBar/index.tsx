@@ -11,7 +11,7 @@ function CongestionBar(props: Props) {
   const { remain, all } = props;
   return (
     <Styled.CongestionBarArea>
-      {all
+      {!!all
         && (
           <Styled.NumofCar
             carnum={all - remain}
