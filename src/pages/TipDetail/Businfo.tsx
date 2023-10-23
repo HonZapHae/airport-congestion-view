@@ -9,7 +9,6 @@ const StyledDiv = styled.div`
   flex-direction: column;
   width: 100%;
   height: 100vh;
-  max-width: 393px;
 `;
 
 const Wrapper = styled.div`
@@ -39,6 +38,13 @@ const ListItem = styled.div`
   border-radius: 8px;
   background-color: #faf9fc;
   padding: 24px 20px;
+  cursor: pointer;
+  &:hover {
+    background-color: #f2f0f5;
+  }
+  &:active {
+    background-color: #f2f0f5;
+  }
 `;
 
 const ListTitle = styled.div`
