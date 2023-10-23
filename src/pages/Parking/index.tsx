@@ -90,7 +90,11 @@ export function Parking() {
             <Styled.Title>주차장 혼잡도 안내</Styled.Title>
           </Styled.TitleWrapper>
           <Styled.RefreshWrapper>
-            <Styled.RefreshDesc>PM 1:30 업데이트 됨</Styled.RefreshDesc>
+            <Styled.RefreshDesc>
+              {new Date().toLocaleString('en-US', { hour12: true, hour: 'numeric', minute: 'numeric' })}
+              {' '}
+              업데이트 됨
+            </Styled.RefreshDesc>
             <IconButton
               onClick={handleRefresh}
               sx={{
