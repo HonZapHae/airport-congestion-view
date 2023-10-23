@@ -18,6 +18,7 @@ export const Header = styled.div`
   height: 36px;
   position: relative;
   margin: 16px 0;
+  margin-top: 24px;
 `;
 
 export const Switch = styled.div`
@@ -32,6 +33,7 @@ export const Favorite = styled.div`
   top: 50%;
   right: 0;
   transform: translateY(-50%);
+  cursor: pointer;
 `;
 
 export const CongestionDescWrapper = styled.div`
@@ -39,7 +41,7 @@ export const CongestionDescWrapper = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 6px;
-  margin-top: 16px;
+  margin-top: 64px;
 `;
 
 export const RefreshWrapper = styled.div`
@@ -67,7 +69,7 @@ export const Time = styled.p`
 `;
 
 export const NotificationWrapper = styled.div`
-  margin-top:5px;
+  margin-top:40px;
   display:flex;
   align-items: center;
 `;
@@ -85,7 +87,7 @@ export const NotificationPuple = styled.span`
 `;
 
 export const StayTime = styled.p`
-  margin-top:0px;
+  margin-top:2px;
   font-size: 12px;
   font-weight: 400;
   line-height: 18px;
