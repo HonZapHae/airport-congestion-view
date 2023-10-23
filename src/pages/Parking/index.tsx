@@ -58,7 +58,7 @@ export function Parking() {
       // eslint-disable-next-line no-console
       console.error('fetchParkingApi error', error);
       // eslint-disable-next-line no-alert
-      alert('fetchParkingApi error');
+      alert('주차장 정보를 조회하는 데 실패했습니다. 잠시 후 다시 시도해 주세요.');
     }
   };
 

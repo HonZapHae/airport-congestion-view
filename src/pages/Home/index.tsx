@@ -66,9 +66,6 @@ export function Home() {
             <SwitchButton checked={checked} onChange={onChange} />
           </Styled.Switch>
         )}
-        <Styled.Favorite>
-          <Favicon fill={fav ? '#9744F7' : '#F6EFFF'} onClick={clickFav} />
-        </Styled.Favorite>
       </Styled.Header>
       <CongestionMap
         airportCode={selectedAirport.code as AirportCodeType}
