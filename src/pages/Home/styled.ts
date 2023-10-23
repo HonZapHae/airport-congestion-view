@@ -11,14 +11,27 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: flex-start;
   box-sizing: border-box;
-  gap: 16px;
 `;
 
 export const Header = styled.div`
-  display: flex;
-  align-items: center;
-  align-self: stretch;
-  justify-content: space-between;
+  width: 100%;
+  height: 36px;
+  position: relative;
+  margin: 16px 0;
+`;
+
+export const Switch = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+`;
+
+export const Favorite = styled.div`
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
 `;
 
 export const CongestionDescWrapper = styled.div`
@@ -26,6 +39,7 @@ export const CongestionDescWrapper = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 6px;
+  margin-top: 16px;
 `;
 
 export const RefreshWrapper = styled.div`
