@@ -13,7 +13,6 @@ const StyledDiv = styled.div`
   flex-direction: column;
   width: 100%;
   height: 100vh;
-  max-width: 393px;
 `;
 
 const Wrapper = styled.div`

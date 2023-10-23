@@ -17,6 +17,7 @@ import {
 } from '../../constant';
 import { ReactComponent as Favicon } from '../../resources/icons/fav_icon.svg';
 import { ReactComponent as Refresh } from '../../resources/icons/refresh_icon.svg';
+import { ReactComponent as Airplane } from '../../resources/icons/airplane_small_icon.svg';
 
 export function Home() {
   const [
@@ -92,6 +93,23 @@ export function Home() {
         </Styled.RefreshWrapper>
         <CongestionDesc />
       </Styled.CongestionDescWrapper>
+      <Styled.NotificationWrapper>
+        <Airplane />
+        <Styled.Notification>
+          국내선 탑승수속
+          {' '}
+          <Styled.NotificationPuple>소요시간 </Styled.NotificationPuple>
+          안내
+        </Styled.Notification>
+
+      </Styled.NotificationWrapper>
+      <Styled.StayTime>
+        탑승까지 평균 체류기간
+      </Styled.StayTime>
+      <Styled.TimeWrapper>
+        <Styled.Time>55</Styled.Time>
+        <Styled.Minute>분</Styled.Minute>
+      </Styled.TimeWrapper>
     </Styled.Wrapper>
   );
 }

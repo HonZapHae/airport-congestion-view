@@ -17,13 +17,12 @@ const StyledDiv = styled.div`
   flex: 1;
   align-items: center;
   width: 100%;
-  margin-top: 74px;
+  margin-top: 48px;
 `;
 
 const Title = styled.div`
   font-size: 22px;
-  line-height: 150%; /* 33px */
-  max-width: 345px;
+  line-height: 150%; 
   padding: 0 24px;
 `;
 
@@ -32,16 +31,15 @@ const Wrapper = styled.div`
   flex-direction: column;
   gap: 32px;
   width: 100%;
-  max-width: 393px;
 `;
 
 const WrapperIcon = styled.div`
-  display: flex;
-  width: 100%;
-  max-width: 345px;
-  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
   flex-direction: row;
   justify-content: space-between;
+  padding: 0 24px;
 `;
 
 const IconBox = styled.div`
@@ -52,12 +50,14 @@ const IconBox = styled.div`
   gap: 8px;
   border-radius: 8px;
   background-color: #faf9fc;
-  width: 106px;
-  height: 104px;
+  width: 100%;
+  height: 112px;
+  padding-bottom: 8px;
   text-align: center;
   font-size: 16px;
   line-height: 140%;
   color: #191919;
+  cursor: pointer;
   &:hover {
     background-color: #f2f0f5;
   }
@@ -118,7 +118,8 @@ export function Tip() {
           {' '}
           <br />
           {' '}
-          공항이용팁을 알려드릴게요
+          <b>공항이용팁</b>
+          을 알려드릴게요
         </Title>
         <WrapperIcon>
           <IconBox
@@ -135,13 +136,17 @@ export function Tip() {
           </IconBox>
           <IconBox
             onClick={() => {
-              navigate('/depatureprocess');
+              navigate('/departureprocess');
             }}
           >
             <Ticket />
             출국절차
           </IconBox>
-          <IconBox>
+          <IconBox
+            onClick={() => {
+              navigate('/parking');
+            }}
+          >
             <Car />
             주차정보
           </IconBox>
