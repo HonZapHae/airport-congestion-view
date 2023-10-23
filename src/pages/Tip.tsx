@@ -118,7 +118,8 @@ export function Tip() {
           {' '}
           <br />
           {' '}
-          공항이용팁을 알려드릴게요
+          <b>공항이용팁</b>
+          을 알려드릴게요
         </Title>
         <WrapperIcon>
           <IconBox
