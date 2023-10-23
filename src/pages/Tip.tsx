@@ -17,7 +17,7 @@ const StyledDiv = styled.div`
   flex: 1;
   align-items: center;
   width: 100%;
-  margin-top: 74px;
+  margin-top: 48px;
 `;
 
 const Title = styled.div`

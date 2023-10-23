@@ -19,6 +19,7 @@ const NavBar = styled.div`
   padding-top: 48px;
   padding-bottom: 16px;
   z-index: 33333;
+  cursor: pointer;
 `;
 
 const Title = styled.div`
