@@ -98,7 +98,7 @@ export default function Search({ onAirportSelect, options }: SearchProps) {
       </Box> */}
       {isOpen ? (
         <>
-          <WrapperFake onClick={toggleDropdown} />
+          {/* <WrapperFake onClick={toggleDropdown} /> */}
           <List
             dense
             sx={{
