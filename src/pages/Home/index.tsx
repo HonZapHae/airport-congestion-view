@@ -8,18 +8,31 @@ import CongestionDesc from '../../components/home/CongestionDesc';
 import CongestionMap from '../../components/home/CongestionMap';
 import Search from '../../components/Search';
 import SwitchButton from '../../components/SwitchButton';
-import { AIRPORT_CODE, AirportCodeType } from '../../constant';
+import {
+  AIRPORT_CODE,
+  AIRPORT_PARKING,
+  AirportCodeType,
+  ListItemType,
+  TERMINAL,
+} from '../../constant';
 import { ReactComponent as Favicon } from '../../resources/icons/fav_icon.svg';
 import { ReactComponent as Refresh } from '../../resources/icons/refresh_icon.svg';
 import { ReactComponent as Airplane } from '../../resources/icons/airplane_small_icon.svg';
 
 export function Home() {
-  const [selectedAirport, setSelectedAirport] = useState<AirportCodeType>(AIRPORT_CODE.INCHEON);
+  const [
+    selectedAirport,
+    setSelectedAirport,
+  ] = useState<ListItemType>({
+    code: AIRPORT_CODE.INCHEON,
+    name: AIRPORT_PARKING.INCHEON1,
+    terminal: TERMINAL.T1,
+  });
   const [fav, setFav] = useState(true);
   const [checked, setChecked] = useState(false);
 
-  const handleAirportSelect = (airportCode: AirportCodeType) => {
-    setSelectedAirport(airportCode);
+  const handleAirportSelect = (airport: ListItemType) => {
+    setSelectedAirport(airport);
     setChecked(false);
   };
 
@@ -48,7 +61,7 @@ export function Home() {
     <Styled.Wrapper>
       <Search onAirportSelect={handleAirportSelect} options={AirportName} />
       <Styled.Header>
-        {selectedAirport === AIRPORT_CODE.INCHEON && (
+        {selectedAirport.code === AIRPORT_CODE.INCHEON && (
           <Styled.Switch>
             <SwitchButton checked={checked} onChange={onChange} />
           </Styled.Switch>
@@ -57,7 +70,10 @@ export function Home() {
           <Favicon fill={fav ? '#9744F7' : '#F6EFFF'} onClick={clickFav} />
         </Styled.Favorite>
       </Styled.Header>
-      <CongestionMap airportCode={selectedAirport} terminalCode={!checked} />
+      <CongestionMap
+        airportCode={selectedAirport.code as AirportCodeType}
+        terminalCode={!checked}
+      />
       <Styled.CongestionDescWrapper>
         <Styled.RefreshWrapper>
           <Styled.RefreshDesc>PM 1:30 업데이트 됨</Styled.RefreshDesc>

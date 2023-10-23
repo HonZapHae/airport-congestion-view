@@ -1,0 +1,11 @@
+import { AIRPORT_CODE, AIRPORT_PARKING, TERMINAL } from '../../constant';
+
+export const AirportParking = [
+  { code: AIRPORT_CODE.INCHEON, name: AIRPORT_PARKING.INCHEON1, terminal: TERMINAL.T1 },
+  { code: AIRPORT_CODE.INCHEON, name: AIRPORT_PARKING.INCHEON2, terminal: TERMINAL.T2 },
+  { code: AIRPORT_CODE.GIMPO, name: AIRPORT_PARKING.GIMPO, terminal: TERMINAL.T1 },
+  { code: AIRPORT_CODE.CHEONGJU, name: AIRPORT_PARKING.CHEONGJU, terminal: TERMINAL.T1 },
+  { code: AIRPORT_CODE.JEJU, name: AIRPORT_PARKING.JEJU, terminal: TERMINAL.T1 },
+  { code: AIRPORT_CODE.GIMHAE, name: AIRPORT_PARKING.GIMHAE, terminal: TERMINAL.T1 },
+  { code: AIRPORT_CODE.DAEGU, name: AIRPORT_PARKING.DAEGU, terminal: TERMINAL.T1 },
+];
