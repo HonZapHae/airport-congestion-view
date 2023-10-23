@@ -112,6 +112,8 @@ export function DepartureProcess() {
                 탑승 30~40분 전까지 탑승게이트에 도착해주세요.
                 <ListThirdItem>
                   인천공항의 경우 게이트 번호에 따라 탑승위치가 다를 수 있으니
+                  {' '}
+                  <br />
                   아래 표를 참고해주세요.
                 </ListThirdItem>
                 <table
@@ -132,7 +134,7 @@ export function DepartureProcess() {
                     <th
                       style={{
                         fontSize: '12px',
-                        fontWeight: '400',
+                        fontWeight: '500',
                         padding: '6px 0',
                       }}
                     >
@@ -141,7 +143,7 @@ export function DepartureProcess() {
                     <th
                       style={{
                         fontSize: '12px',
-                        fontWeight: '400',
+                        fontWeight: '500',
                       }}
                     >
                       1~50
@@ -149,7 +151,7 @@ export function DepartureProcess() {
                     <th
                       style={{
                         fontSize: '12px',
-                        fontWeight: '400',
+                        fontWeight: '500',
                       }}
                     >
                       101~132
@@ -157,7 +159,7 @@ export function DepartureProcess() {
                     <th
                       style={{
                         fontSize: '12px',
-                        fontWeight: '400',
+                        fontWeight: '500',
                       }}
                     >
                       230~270
@@ -176,7 +178,7 @@ export function DepartureProcess() {
                     </td>
                     <td
                       style={{
-                        fontSize: '10px',
+                        fontSize: '12px',
                         textAlign: 'center',
                         background: 'white',
                       }}
@@ -185,7 +187,7 @@ export function DepartureProcess() {
                     </td>
                     <td
                       style={{
-                        fontSize: '10px',
+                        fontSize: '12px',
                         textAlign: 'center',
                         background: 'white',
                       }}
@@ -194,7 +196,7 @@ export function DepartureProcess() {
                     </td>
                     <td
                       style={{
-                        fontSize: '10px',
+                        fontSize: '12px',
                         textAlign: 'center',
                         background: 'white',
                       }}
