@@ -1,3 +1,16 @@
+export const AIRPORT_INDEX = {
+  INCHEON: 'INCHEON',
+  INCHEON1: 'INCHEON1',
+  INCHEON2: 'INCHEON2',
+  GIMPO: 'GIMPO',
+  CHEONGJU: 'CHEONGJU',
+  JEJU: 'JEJU',
+  GIMHAE: 'GIMHAE',
+  DAEGU: 'DAEGU',
+} as const;
+
+export type AirportIndexType = typeof AIRPORT_INDEX[keyof typeof AIRPORT_INDEX];
+
 export const AIRPORT_CODE = {
   CHEONGJU: 'CJJ', // 청주
   DAEGU: 'DGU', // 대구
@@ -8,6 +21,29 @@ export const AIRPORT_CODE = {
 } as const;
 
 export type AirportCodeType = typeof AIRPORT_CODE[keyof typeof AIRPORT_CODE];
+
+export const AIRPORT_NM = {
+  CHEONGJU: '청주국제공항',
+  DAEGU: '대구국제공항',
+  GIMHAE: '김해국제공항',
+  GIMPO: '김포국제공항',
+  INCHEON: '인천국제공항',
+  JEJU: '제주국제공항',
+} as const;
+
+export type AirportNmType = typeof AIRPORT_NM[keyof typeof AIRPORT_NM];
+
+export const AIRPORT_PARKING = {
+  CHEONGJU: '청주공항 주차장',
+  DAEGU: '대구국제공항',
+  GIMHAE: '김해공항 주차장',
+  GIMPO: '김포공항 주차장',
+  INCHEON1: '인천국제공항 제1주차장',
+  INCHEON2: '인천국제공항 제2주차장',
+  JEJU: '제주공항 주차장',
+} as const;
+
+export type AirportParkingType = typeof AIRPORT_PARKING[keyof typeof AIRPORT_PARKING];
 
 export const BACKGROUND_COLOR = {
   OFF_WHITE: '#fdfdfe',
