@@ -14,7 +14,7 @@ export const CongestionBarArea = styled.div`
   height: 34px;
 `;
 export const CongestionBarWrapper = styled.div`
-  background-color: #F4F4F4;
+  background-color: #f4f4f4;
   width: 273px;
   height: 26px;
   border-radius: 6px;
@@ -23,15 +23,19 @@ export const CongestionBarWrapper = styled.div`
   justify-content: start;
   align-items: center;
   box-sizing: border-box;
-;
 `;
-export const CongestionBar = styled.div<{ carnum?: number, parkingTotal?: number }>`
+export const CongestionBar = styled.div<{
+  carnum?: number;
+  parkingTotal?: number;
+}>`
   animation: ${(props) => slide(props.carnum, props.parkingTotal)} 1s ease;
-  width: calc(253px * (${(props) => props.carnum}/${(props) => props.parkingTotal}));
+  width: calc(
+    253px * (${(props) => props.carnum} / ${(props) => props.parkingTotal})
+  );
   height: 10px;
   border-radius: 6px;
-  background-color: #9837F9;
-  transform: rotate( 720deg );
+  background-color: #9837f9;
+  transform: rotate(720deg);
 `;
 export const NumofParking = styled.span`
   position: relative;
@@ -39,12 +43,14 @@ export const NumofParking = styled.span`
   bottom: 27px;
   left: 280px;
 `;
-export const NumofCar = styled.span<{ carnum?: number, parkingTotal?: number }>`
+export const NumofCar = styled.span<{ carnum?: number; parkingTotal?: number }>`
   position: relative;
-  left: calc(253px * (${(props) => props.carnum}/${(props) => props.parkingTotal}));
+  left: calc(
+    253px * (${(props) => props.carnum} / ${(props) => props.parkingTotal})
+  );
   width: 20px;
   font-size: 10px;
-  color: #9837F9;
+  color: #9837f9;
 `;
 export const Numbubble = styled.div`
   display: inline-block;
