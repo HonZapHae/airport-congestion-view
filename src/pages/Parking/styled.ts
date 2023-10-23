@@ -54,7 +54,7 @@ export const RefreshDesc = styled.p`
 `;
 
 export const CongestionBarContainer = styled.div`
-  height: 350px;
+  height: calc(100vh - 550px);
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
