@@ -18,6 +18,7 @@ export const StyledDiv = styled.div`
     align-items: center;
     justify-content: center;
     position: relative;
+    margin-top: 64px;
 `;
 
 function getCongestionColor(congestion: CongestionLvlType): CongestionColorType {

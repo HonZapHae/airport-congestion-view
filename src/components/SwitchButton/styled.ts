@@ -45,7 +45,5 @@ export const StyledSwitch = styled(Switch)(() => ({
       height: 16,
       margin: 2,
     },
-
   },
-
 }));
