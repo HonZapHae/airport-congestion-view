@@ -2,18 +2,36 @@ import React from 'react';
 import * as Styled from './styled';
 import { ReactComponent as Bubbleicon } from '../../../resources/icons/bubble_icon.svg';
 
-function CongestionBar() {
+type Props = {
+  remain: number,
+  all: number,
+}
+
+function CongestionBar(props: Props) {
+  const { remain, all } = props;
   return (
     <Styled.CongestionBarArea>
-      <Styled.NumofCar carnum={500} parkingTotal={2270}>220</Styled.NumofCar>
+      {all
+        && (
+          <Styled.NumofCar
+            carnum={all - remain}
+            parkingTotal={all}
+          >
+            {all - remain}
+          </Styled.NumofCar>
+        )}
       <Styled.Numbubble>
-        <Styled.NumbubbleText>1770</Styled.NumbubbleText>
-        <Bubbleicon fill="#9837F9" />
+        <Styled.NumbubbleText>{all ? remain : 0}</Styled.NumbubbleText>
+        <Bubbleicon fill={!all ? '#FF4A4A' : '#9837F9'} />
       </Styled.Numbubble>
       <Styled.CongestionBarWrapper>
-        <Styled.CongestionBar carnum={500} parkingTotal={2270} />
+        <Styled.CongestionBar
+          carnum={!all ? 1 : all - remain}
+          parkingTotal={!all ? 1 : all}
+          full={!all}
+        />
       </Styled.CongestionBarWrapper>
-      <Styled.NumofParking>2270</Styled.NumofParking>
+      <Styled.NumofParking>{!all ? '만차' : all}</Styled.NumofParking>
     </Styled.CongestionBarArea>
   );
 }

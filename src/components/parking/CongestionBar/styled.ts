@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { css, keyframes } from '@emotion/react';
+import { keyframes } from '@emotion/react';
 
 const slide = (carnum?: number, parkingTotal?: number) => keyframes`
   from {
@@ -27,21 +27,28 @@ export const CongestionBarWrapper = styled.div`
 export const CongestionBar = styled.div<{
   carnum?: number;
   parkingTotal?: number;
+  full: boolean;
 }>`
   animation: ${(props) => slide(props.carnum, props.parkingTotal)} 1s ease;
   width: calc(
     253px * (${(props) => props.carnum} / ${(props) => props.parkingTotal})
   );
-  height: 10px;
+  height: 12px;
   border-radius: 6px;
-  background-color: #9837f9;
+  background-color: ${(props) => (props.full ? '#FF4A4A' : '#9837F9')};
   transform: rotate(720deg);
 `;
 export const NumofParking = styled.span`
   position: relative;
-  font-size: 10px;
   bottom: 27px;
   left: 280px;
+  color: #000;
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.3px;
 `;
 export const NumofCar = styled.span<{ carnum?: number; parkingTotal?: number }>`
   position: relative;
@@ -49,8 +56,13 @@ export const NumofCar = styled.span<{ carnum?: number; parkingTotal?: number }>`
     253px * (${(props) => props.carnum} / ${(props) => props.parkingTotal})
   );
   width: 20px;
-  font-size: 10px;
-  color: #9837f9;
+  color: #9837F9;
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.3px;
 `;
 export const Numbubble = styled.div`
   display: inline-block;

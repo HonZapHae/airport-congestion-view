@@ -106,7 +106,7 @@ export default function Search({ onAirportSelect, options }: SearchProps) {
               const labelId = `checkbox-list-secondary-label-${airport.code}`;
               return (
                 <ListItem
-                  key={airport.code}
+                  key={`${airport.code}${airport.terminal || ''}`}
                   sx={{ width: 'auto', backgroundColor: '#FAF9FC' }}
                   onClick={() => {
                     handleAirportClick(airport);
