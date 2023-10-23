@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
+import { Icon } from '@mui/material';
 import { TipNavbar } from '../../components/Tip/TipNavbar';
 import { ReactComponent as Bag } from '../../resources/icons/icon-bag.svg';
 import { ReactComponent as Bottle } from '../../resources/icons/icon-bottle.svg';
@@ -52,10 +53,10 @@ const ListItem = styled.div`
   padding: 24px 20px;
   cursor: pointer;
   &:hover {
-    background-color: #f2f0f5;
+    background-color: #F8F5FF;
   }
   &:active {
-    background-color: #f2f0f5;
+    background-color: #F8F5FF;
   }
 `;
 
@@ -78,6 +79,14 @@ const TitleItem = styled.div`
   display: flex;
   flex-direction: row;
   gap: 15px;
+  align-items: center;
+`;
+
+const IconBox = styled.div`
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
   align-items: center;
 `;
 
@@ -118,11 +127,11 @@ export function Minbaggage() {
           </Summery>
           <List>
             <ListItem>
-              <ListTitle
-                onClick={() => toggleAccodian('bag')}
-              >
+              <ListTitle onClick={() => toggleAccodian('bag')}>
                 <TitleItem>
-                  <Bag />
+                  <IconBox>
+                    <Bag />
+                  </IconBox>
                   <Label>휴대수하물 개수</Label>
                 </TitleItem>
                 <ButtonArrow>
@@ -140,7 +149,9 @@ export function Minbaggage() {
             <ListItem>
               <ListTitle onClick={() => toggleAccodian('bottle')}>
                 <TitleItem>
-                  <Bottle />
+                  <IconBox>
+                    <Bottle />
+                  </IconBox>
                   <Label>기내 반입 가능한 액체류</Label>
                 </TitleItem>
                 <ButtonArrow>
@@ -158,7 +169,9 @@ export function Minbaggage() {
             <ListItem>
               <ListTitle onClick={() => toggleAccodian('carrier')}>
                 <TitleItem>
-                  <Carrier />
+                  <IconBox>
+                    <Carrier />
+                  </IconBox>
                   <Label>휴대수하물 보관</Label>
                 </TitleItem>
                 <ButtonArrow>
@@ -176,7 +189,9 @@ export function Minbaggage() {
             <ListItem>
               <ListTitle onClick={() => toggleAccodian('luggages')}>
                 <TitleItem>
-                  <Luggages />
+                  <IconBox>
+                    <Luggages />
+                  </IconBox>
                   <Label>초과 또는 특수 수하물</Label>
                 </TitleItem>
                 <ButtonArrow>
@@ -194,7 +209,9 @@ export function Minbaggage() {
             <ListItem>
               <ListTitle onClick={() => toggleAccodian('babyPackage')}>
                 <TitleItem>
-                  <BabyPackage />
+                  <IconBox>
+                    <BabyPackage />
+                  </IconBox>
                   <Label>유소아 짐</Label>
                 </TitleItem>
                 <ButtonArrow>
@@ -211,7 +228,6 @@ export function Minbaggage() {
                 </ListBody>
               ) : null}
             </ListItem>
-
           </List>
         </Body>
       </Wrapper>
