@@ -1,16 +1,3 @@
-export const AIRPORT_INDEX = {
-  INCHEON: 'INCHEON',
-  INCHEON1: 'INCHEON1',
-  INCHEON2: 'INCHEON2',
-  GIMPO: 'GIMPO',
-  CHEONGJU: 'CHEONGJU',
-  JEJU: 'JEJU',
-  GIMHAE: 'GIMHAE',
-  DAEGU: 'DAEGU',
-} as const;
-
-export type AirportIndexType = typeof AIRPORT_INDEX[keyof typeof AIRPORT_INDEX];
-
 export const AIRPORT_CODE = {
   CHEONGJU: 'CJJ', // 청주
   DAEGU: 'DGU', // 대구
@@ -83,6 +70,12 @@ export const CONGESTION_TXT = {
 } as const;
 
 export type CongestionTxtType = typeof CONGESTION_TXT[keyof typeof CONGESTION_TXT];
+
+export type ListItemType = {
+  code: string;
+  name: string;
+  terminal?: boolean;
+};
 
 export type PosType = {
   top: number;

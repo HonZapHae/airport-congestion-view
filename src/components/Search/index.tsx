@@ -11,32 +11,25 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import NorthWestIcon from '@mui/icons-material/NorthWest';
 import FlightLandIcon from '@mui/icons-material/FlightLand';
 import { Wrapper, WrapperFake } from './styled';
-import {
-  AIRPORT_NM,
-  AirportCodeType,
-} from '../../constant';
-
-type ListItemType = {
-    code: string;
-    name: string;
-};
+import { ListItemType } from '../../constant';
 
 type SearchProps = {
-  onAirportSelect: (airportCode: AirportCodeType) => void,
+  onAirportSelect: (airport: ListItemType) => void,
   options: ListItemType[],
 }
 
 export default function Search({ onAirportSelect, options }: SearchProps) {
-  const [values, setValues] = useState<string>(AIRPORT_NM.INCHEON);
+  const [values, setValues] = useState<string>(options[0].name);
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen); // 현재 상태의 반대 값을 설정합니다.
   };
 
-  const handleAirportClick = (airportCode: AirportCodeType) => {
-    onAirportSelect(airportCode);
-    setValues(options.find(((v) => v.code === airportCode))?.name || '');
+  const handleAirportClick = (airport: ListItemType) => {
+    onAirportSelect(airport);
+    const value = options.find(((v) => v.code === airport.code && (v.terminal === undefined || v.terminal === airport.terminal)))?.name || '';
+    setValues(value);
   };
 
   return (
@@ -116,7 +109,7 @@ export default function Search({ onAirportSelect, options }: SearchProps) {
                   key={airport.code}
                   sx={{ width: 'auto', backgroundColor: '#FAF9FC' }}
                   onClick={() => {
-                    handleAirportClick(airport.code as AirportCodeType);
+                    handleAirportClick(airport);
                     toggleDropdown();
                   }}
                   secondaryAction={(
