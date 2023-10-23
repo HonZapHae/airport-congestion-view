@@ -12,13 +12,8 @@ import NorthWestIcon from '@mui/icons-material/NorthWest';
 import FlightLandIcon from '@mui/icons-material/FlightLand';
 import { Wrapper, WrapperFake } from './styled';
 import {
-  AIRPORT_CODE,
-  AIRPORT_INDEX,
   AIRPORT_NM,
   AirportCodeType,
-  AirportIndexType,
-  AirportNmType,
-  AirportParkingType,
 } from '../../constant';
 
 type ListItemType = {
