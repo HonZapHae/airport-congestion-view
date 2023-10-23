@@ -135,7 +135,7 @@ export function Tip() {
           </IconBox>
           <IconBox
             onClick={() => {
-              navigate('/depatureprocess');
+              navigate('/departureprocess');
             }}
           >
             <Ticket />
