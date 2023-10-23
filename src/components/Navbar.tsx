@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Tabs, Tab, createTheme, ThemeProvider,
 } from '@mui/material';
@@ -25,8 +25,18 @@ const theme = createTheme({
 export function Navbar() {
   const [value, setValue] = useState(0);
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+    localStorage.setItem('tabs', `${newValue}`);
     setValue(newValue);
   };
+
+  const fetchTabIndex = () => {
+    const tabIndex = localStorage.getItem('tabs') || 0;
+    setValue(Number(tabIndex));
+  };
+
+  useEffect(() => {
+    fetchTabIndex();
+  }, []);
 
   return (
     <ThemeProvider theme={theme}>

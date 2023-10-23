@@ -10,12 +10,12 @@ export const AIRPORT_CODE = {
 export type AirportCodeType = typeof AIRPORT_CODE[keyof typeof AIRPORT_CODE];
 
 export const AIRPORT_NM = {
-  CHEONGJU: '청주국제공항',
-  DAEGU: '대구국제공항',
-  GIMHAE: '김해국제공항',
-  GIMPO: '김포국제공항',
+  CHEONGJU: '청주공항',
+  DAEGU: '대구공항',
+  GIMHAE: '김해공항',
+  GIMPO: '김포공항',
   INCHEON: '인천국제공항',
-  JEJU: '제주국제공항',
+  JEJU: '제주공항',
 } as const;
 
 export type AirportNmType = typeof AIRPORT_NM[keyof typeof AIRPORT_NM];
