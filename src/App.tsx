@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Background } from './styled';
+import { Global } from '@emotion/react';
+import { Background, GlobalStyles } from './styled';
 import { DomesticFlightApi } from './api/domesticFlight';
 // import { IncheonAirportApi } from "./api/incheonAirport";
 import { Router } from './shared/Router';
@@ -23,9 +24,12 @@ function App() {
   }, []);
 
   return (
-    <Background>
-      <Router />
-    </Background>
+    <>
+      <Global styles={GlobalStyles} />
+      <Background>
+        <Router />
+      </Background>
+    </>
   );
 }
 

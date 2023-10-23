@@ -1,3 +1,65 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('./resources/fonts/Roboto-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; 
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('./resources/fonts/Roboto-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap; 
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('./resources/fonts/Roboto-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap; 
+}
+@font-face {
+  font-family: 'Noto Sans KR';
+  src: url('./resources/fonts/NotoSansKR-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  unicode-range: U+AC00-D7A3;
+  font-display: swap; 
+}
+@font-face {
+  font-family: 'Noto Sans KR';
+  src: url('./resources/fonts/NotoSansKR-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  unicode-range: U+AC00-D7A3;
+  font-display: swap; 
+}
+@font-face {
+  font-family: 'Noto Sans KR';
+  src: url('./resources/fonts/NotoSansKR-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  unicode-range: U+AC00-D7A3;
+  font-display: swap; 
+}
+@font-face {
+  font-family: 'Noto Sans KR';
+  src: url('./resources/fonts/NotoSansKR-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  unicode-range: U+AC00-D7A3;
+  font-display: swap; 
+}
+@font-face {
+  font-family: 'Noto Sans KR';
+  src: url('./resources/fonts/NotoSansKR-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  unicode-range: U+AC00-D7A3;
+  font-display: swap; 
+}
+
 html, body, #root {
   height: 100%
 }
@@ -5,9 +67,7 @@ html, body, #root {
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
