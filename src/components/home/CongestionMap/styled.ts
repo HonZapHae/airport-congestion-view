@@ -13,6 +13,7 @@ import { ReactComponent as JejuMap } from '../../../resources/images/JejuMap.svg
 export const StyledDiv = styled.div`
     max-width: 440px;
     min-width: 290px;
+    height: 220px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -52,7 +53,7 @@ export const StyledIncheonMap2 = styled(IncheonMap2)<{congestions: CongestionLvl
   width: 100%;
   height: 50vw;
   max-height: 250px;
-  object-fit: fill;
+  object-fit: contain;
   & .gate1 { fill: ${(props) => getCongestionColor(props.congestions[0]) || CONGESTION_COLOR.GOOD} };
   & .gate2 { fill: ${(props) => getCongestionColor(props.congestions[1]) || CONGESTION_COLOR.GOOD} };
 `;
@@ -61,7 +62,7 @@ export const StyledGimpoMap = styled(GimpoMap)<{congestions: CongestionLvlType[]
   width: 100%;
   height: 36vw;
   max-height: 180px;
-  object-fit: fill;
+  object-fit: contain;
   & .area { fill: ${(props) => getCongestionColor(props.congestions[0]) || CONGESTION_COLOR.GOOD} };
 `;
 
@@ -69,7 +70,7 @@ export const StyledCheongjuMap = styled(CheongjuMap)<{congestions: CongestionLvl
   width: 100%;
   height: 40vw;
   max-height: 200px;
-  object-fit: fill;
+  object-fit: contain;
   & .area { fill: ${(props) => getCongestionColor(props.congestions[0]) || CONGESTION_COLOR.GOOD} };
 `;
 
@@ -77,7 +78,7 @@ export const StyledJejuMap = styled(JejuMap)<{congestions: CongestionLvlType[]}>
   width: 100%;
   height: 32vw;
   max-height: 160px;
-  object-fit: fill;
+  object-fit: contain;
   & .area { fill: ${(props) => getCongestionColor(props.congestions[0]) || CONGESTION_COLOR.GOOD} };
 `;
 
@@ -85,7 +86,7 @@ export const StyledGimhaeMap = styled(GimhaeMap)<{congestions: CongestionLvlType
   width: 100%;
   height: 36vw;
   max-height: 180px;
-  object-fit: fill;
+  object-fit: contain;
   & .area { fill: ${(props) => getCongestionColor(props.congestions[0]) || CONGESTION_COLOR.GOOD} };
 `;
 
@@ -93,6 +94,6 @@ export const StyledDaeguMap = styled(DaeguMap)<{congestions: CongestionLvlType[]
   width: 100%;
   height: 30vw;
   max-height: 150px;
-  object-fit: fill;
+  object-fit: contain;
   & .area { fill: ${(props) => getCongestionColor(props.congestions[0]) || CONGESTION_COLOR.GOOD} };
 `;
