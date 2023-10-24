@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import IconButton from '@mui/material/Button';
 import { AirportName } from './constants';
 import * as Styled from './styled';
-import { DomesticFlightApi } from '../../api/domesticFlight';
-import { IncheonAirportApi } from '../../api/incheonAirport';
+import { CongestionData, DomesticFlightApi } from '../../api/domesticFlight';
+import { IncheonAirportApi, IncheonCongestionData } from '../../api/incheonAirport';
 import CongestionDesc from '../../components/home/CongestionDesc';
 import CongestionMap from '../../components/home/CongestionMap';
 import Search from '../../components/Search';
@@ -12,8 +12,10 @@ import {
   AIRPORT_CODE,
   AIRPORT_PARKING,
   AirportCodeType,
+  CongestionLvlType,
   ListItemType,
   TERMINAL,
+  TerminalType,
 } from '../../constant';
 import { ReactComponent as Favicon } from '../../resources/icons/fav_icon.svg';
 import { ReactComponent as Refresh } from '../../resources/icons/refresh_icon.svg';
@@ -30,10 +32,59 @@ export function Home() {
   });
   const [fav, setFav] = useState(true);
   const [checked, setChecked] = useState(false);
+  const [congestionList, setCongestionList] = useState<CongestionLvlType[]>([]);
+  const [time, setTime] = useState('00:00');
+  const getDomesticCongestion = (list:CongestionData[], airport:ListItemType) => {
+    // 혼잡도 맵에 넘겨줄 배열(국내선)
+    const congestionValue = list.filter((item) => item.IATA_APCD === airport.code);
+    const valueArray:CongestionLvlType[] = [];
+    valueArray.push(congestionValue[0].CGDR_ALL_LVL as CongestionLvlType);
+    setCongestionList(valueArray);
+    setTime(congestionValue[0].PRC_HR);
+  };
 
+  const getInchoenValidData = (list:IncheonCongestionData[], airport:ListItemType) => {
+    // 현재 시간에 맞는 인천 혼잡도 데이터 가져오기
+    const now = new Date(); // 현재 시간
+    const startDate = new Date();
+    const endDate = new Date();
+    const validData = list.find((item) => {
+      const { atime } = item;
+      startDate.setHours(Number(atime.split('_')[0]), 0, 0);
+      if (atime === '23_00') endDate.setDate(endDate.getDate() + 1);
+      endDate.setHours(Number(atime.split('_')[1]), 0, 0);
+      return (now >= startDate && now < endDate) ? item : undefined;
+    });
+    // TODO : 혼잡도 맵에 넘겨줄 배열 만들어줄 로직 개발 필요
+    if (validData) console.log(validData);
+  };
+
+  const DomesticFetchData = async (airport:ListItemType) => {
+    try {
+      const response = await DomesticFlightApi.fetchDomesticFlight();
+      getDomesticCongestion(response.data.data, airport);
+    } catch (error) {
+      console.error('fetchDomesticFlightApi error', error);
+    }
+  };
+
+  const IncheonFetchData = async (airport:ListItemType) => {
+    try {
+      const response = await IncheonAirportApi.fetchincheonAirport('0');
+      getInchoenValidData(response.data.response.body.items, airport);
+    } catch (error) {
+      console.error('fetchDomesticFlightApi error', error);
+    }
+  };
   const handleAirportSelect = (airport: ListItemType) => {
+    // TODO : 인천일 경우 터미널 정보 세팅 필요
     setSelectedAirport(airport);
     setChecked(false);
+    if (airport.code === 'ICN') {
+      IncheonFetchData(airport);
+    } else {
+      DomesticFetchData(airport);
+    }
   };
 
   const clickFav = () => {
@@ -45,16 +96,7 @@ export function Home() {
   };
 
   const handleRefresh = () => {
-    const fetchData = async () => {
-      try {
-        const response = await DomesticFlightApi.fetchDomesticFlight();
-        console.log('res', response);
-      } catch (error) {
-        console.error('fetchDomesticFlightApi error', error);
-      }
-    };
-
-    fetchData();
+    DomesticFetchData(selectedAirport);
   };
 
   return (
@@ -70,10 +112,15 @@ export function Home() {
       <CongestionMap
         airportCode={selectedAirport.code as AirportCodeType}
         terminalCode={!checked}
+        congestionArray={congestionList}
       />
       <Styled.CongestionDescWrapper>
         <Styled.RefreshWrapper>
-          <Styled.RefreshDesc>PM 1:30 업데이트 됨</Styled.RefreshDesc>
+          <Styled.RefreshDesc>
+            {time}
+            {' '}
+            업데이트 됨
+          </Styled.RefreshDesc>
           <IconButton
             onClick={handleRefresh}
             sx={{
