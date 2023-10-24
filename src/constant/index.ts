@@ -1,6 +1,6 @@
 export const AIRPORT_CODE = {
   CHEONGJU: 'CJJ', // 청주
-  DAEGU: 'DGU', // 대구
+  DAEGU: 'TAE', // 대구
   GIMHAE: 'PUS', // 김해
   GIMPO: 'GMP', // 김포
   INCHEON: 'ICN', // 인천
