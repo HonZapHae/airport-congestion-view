@@ -92,7 +92,11 @@ export function Parking() {
           </Styled.TitleWrapper>
           <Styled.RefreshWrapper>
             <Styled.RefreshDesc>
-              {new Date().toLocaleString('en-US', { hour12: true, hour: 'numeric', minute: 'numeric' })}
+              {new Date().toLocaleString('en-US', {
+                hour12: true,
+                hour: 'numeric',
+                minute: 'numeric',
+              })}
               {' '}
               업데이트 됨
             </Styled.RefreshDesc>
@@ -111,15 +115,15 @@ export function Parking() {
             />
           </Styled.RefreshWrapper>
         </Styled.TitleContainer>
+        {parking.map((v: ParkingDataType) => (
+          <Styled.CongestionBarWrapper key={v.name}>
+            <Styled.CongestionBarTitle>
+              {PARKING_NAME[v.name as keyof typeof PARKING_NAME] || '기타'}
+            </Styled.CongestionBarTitle>
+            <CongestionBar remain={v.remain} all={v.all} />
+          </Styled.CongestionBarWrapper>
+        ))}
         <ParkingPrice />
-        {parking.map(
-          (v: ParkingDataType) => (
-            <Styled.CongestionBarWrapper key={v.name}>
-              <Styled.CongestionBarTitle>{PARKING_NAME[v.name as keyof typeof PARKING_NAME] || '기타'}</Styled.CongestionBarTitle>
-              <CongestionBar remain={v.remain} all={v.all} />
-            </Styled.CongestionBarWrapper>
-          ),
-        )}
       </Styled.CongestionBarContainer>
     </Styled.Wrapper>
   );

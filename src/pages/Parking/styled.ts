@@ -60,6 +60,7 @@ export const CongestionBarContainer = styled.div`
   flex-direction: column;
   align-items: center;
   align-self: stretch;
+  padding-bottom: 96px;
   &::-webkit-scrollbar {
     display: none;
   }
