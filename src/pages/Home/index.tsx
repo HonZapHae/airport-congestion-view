@@ -80,7 +80,7 @@ export function Home() {
     // TODO : 인천일 경우 터미널 정보 세팅 필요
     setSelectedAirport(airport);
     setChecked(false);
-    if (airport.code === 'ICN') {
+    if (airport.code === AIRPORT_CODE.INCHEON) {
       IncheonFetchData(airport);
     } else {
       DomesticFetchData(airport);
