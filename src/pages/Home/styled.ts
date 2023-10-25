@@ -2,22 +2,23 @@ import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
   width: 100%;
-  padding-top: 30px;
+  padding-top: 80px;
   padding-right: 24px;
   padding-left: 24px;
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: start;
   box-sizing: border-box;
+  background-color: white;
 `;
 
 export const Header = styled.div`
   width: 100%;
   height: 36px;
   position: relative;
-  margin: 16px 0;
+  /* margin: 16px 0; */
   margin-top: 24px;
 `;
 
@@ -61,16 +62,16 @@ export const RefreshDesc = styled.p`
 `;
 
 export const Time = styled.p`
-  color:#631EC6;
+  color: #631ec6;
   font-size: 48px;
   font-weight: 900;
   line-height: 72px;
-  margin : 0px
+  margin: 0px;
 `;
 
 export const NotificationWrapper = styled.div`
-  margin-top:40px;
-  display:flex;
+  margin-top: 40px;
+  display: flex;
   align-items: center;
 `;
 export const Notification = styled.p`
@@ -83,11 +84,11 @@ export const Notification = styled.p`
 `;
 
 export const NotificationPuple = styled.span`
-  color: #631EC6;
+  color: #631ec6;
 `;
 
 export const StayTime = styled.p`
-  margin-top:2px;
+  margin-top: 2px;
   font-size: 12px;
   font-weight: 400;
   line-height: 18px;
@@ -101,7 +102,7 @@ export const Minute = styled.p`
 `;
 
 export const TimeWrapper = styled.div`
-  margin-top:0px;
+  margin-top: 0px;
   display: flex;
   align-items: flex-end;
   justify-content: center;

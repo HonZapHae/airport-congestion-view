@@ -4,18 +4,29 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1px;
-  position: relative;
+  position: fixed;
   width: 100%;
   max-width: 500px;
   min-width: 350px;
+  top: 0;
+  background-color: white;
+  z-index: 9;
+  /* box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.04) !important; */
+`;
+
+export const Container = styled.div`
+  display: flex;
+  padding: 24px;
+  z-index: 1;
   cursor: pointer;
-  z-index: 10;
 `;
 
 export const WrapperFake = styled.div`
+  top:0;
+  left:0;
+  position: absolute;
   width: 100vw;
   height: 100vh;
-  position: fixed;
   background-color: transparent;
-
+  z-index: 4;
 `;

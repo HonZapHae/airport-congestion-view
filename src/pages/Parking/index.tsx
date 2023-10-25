@@ -16,6 +16,7 @@ import ImageView from '../../components/parking/ImageView';
 import { parseParkingData } from '../../utils/parser';
 import { ReactComponent as Car } from '../../resources/icons/icon-car.svg';
 import { ReactComponent as Refresh } from '../../resources/icons/refresh_icon.svg';
+import ParkingPrice from '../../components/parking/Price/ParkingPrice';
 
 type IncheonParkingApiResponseType = {
   datetm: string;
@@ -110,6 +111,7 @@ export function Parking() {
             />
           </Styled.RefreshWrapper>
         </Styled.TitleContainer>
+        <ParkingPrice />
         {parking.map(
           (v: ParkingDataType) => (
             <Styled.CongestionBarWrapper key={v.name}>
