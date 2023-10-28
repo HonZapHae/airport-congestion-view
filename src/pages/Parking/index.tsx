@@ -16,11 +16,12 @@ import {
 import CongestionBar from '@/components/parking/CongestionBar';
 import Search from '@/components/Search';
 import ParkingPrice from '@/components/parking/Price/ParkingPrice';
-import { AirportParking, DEFAULT_CODE } from './constants';
+import { AirportParking } from './constants';
 import ImageView from '@/components/parking/ImageView';
-import { parseParkingData } from '@/utils/parser';
+import { DEFAULT_CODE } from '@/constants';
 import Car from '@/resources/icons/icon-car.svg?react';
 import Refresh from '@/resources/icons/refresh_icon.svg?react';
+import { parseParkingData } from '@/utils/parser';
 
 type IncheonParkingApiResponseType = {
   datetm: string;

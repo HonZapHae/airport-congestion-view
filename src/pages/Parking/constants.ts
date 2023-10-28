@@ -9,5 +9,3 @@ export const AirportParking = [
   { code: AIRPORT_CODE.GIMHAE, name: AIRPORT_PARKING.GIMHAE, terminal: TERMINAL.T1 },
   { code: AIRPORT_CODE.DAEGU, name: AIRPORT_PARKING.DAEGU, terminal: TERMINAL.T1 },
 ];
-
-export const DEFAULT_CODE = AIRPORT_CODE.INCHEON;

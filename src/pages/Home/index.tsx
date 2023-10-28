@@ -15,7 +15,9 @@ import {
   CongestionLvlType,
   ListItemType,
   TERMINAL,
+  TerminalType,
 } from '@/constants';
+import { DEFAULT_CODE } from '@/constants';
 // import Favicon from '@/resources/icons/fav_icon.svg?react';
 import Refresh from '@/resources/icons/refresh_icon.svg?react';
 import Airplane from '@/resources/icons/airplane_small_icon.svg?react';
@@ -33,18 +35,60 @@ export function Home() {
   const [checked, setChecked] = useState(false);
   const [congestionList, setCongestionList] = useState<CongestionLvlType[]>([]);
   const [time, setTime] = useState('00:00');
-  const getDomesticCongestion = (list:CongestionData[], airport:ListItemType) => {
+
+  const getDomesticCongestion = (list:CongestionData[], code: AirportCodeType) => {
     // 혼잡도 맵에 넘겨줄 배열(국내선)
-    const congestionValue = list.filter((item) => item.IATA_APCD === airport.code);
-    const valueArray:CongestionLvlType[] = [];
-    valueArray.push(congestionValue[0].CGDR_ALL_LVL as CongestionLvlType);
-    setCongestionList(valueArray);
+    const congestionValue = list.filter((item) => item.IATA_APCD === code);
+    const congestionArray:CongestionLvlType[] = [];
+    congestionArray.push(congestionValue[0].CGDR_ALL_LVL as CongestionLvlType);
+    setCongestionList(congestionArray);
     setTime(congestionValue[0].PRC_HR);
   };
 
-  const getInchoenValidData = (list:IncheonCongestionData[]) => {
+  const getInchoenCongestion = (list:number[], terminal?:boolean) => {
+    // 혼잡도 맵에 넘겨줄 배열(인천)
+    let congestionArray:CongestionLvlType[] = [];
+    if (terminal === TERMINAL.T1) {
+      congestionArray = list.map((item) => {
+        if (item >= 1 && item <= 7000) {
+          return 1;
+        } if (item <= 7600) {
+          return 2;
+        } if (item <= 8600) {
+          return 3;
+        }
+        return 4;
+      });
+    } else {
+      congestionArray = list.map((item) => {
+        if (item >= 1 && item <= 3200) {
+          return 1;
+        } if (item <= 3500) {
+          return 2;
+        } if (item <= 4000) {
+          return 3;
+        }
+        return 4;
+      });
+    }
+    return congestionArray;
+  };
+
+  const getTerminalData = (data:IncheonCongestionData, terminal?:TerminalType) => {
+    const t1Keys = ['t1sum5', 't1sum6', 't1sum7', 't1sum8'];
+    const t2Keys = ['t2sum3', 't2sum4'];
+    let result = [];
+    if (terminal === TERMINAL.T1) {
+      result = t1Keys.map((key) => Number(data[key]));
+    } else {
+      result = t2Keys.map((key) => Number(data[key]));
+    }
+    setCongestionList(getInchoenCongestion(result, terminal));
+  };
+
+  const getInchoenValidData = (list:IncheonCongestionData[], terminal?:TerminalType) => {
     // 현재 시간에 맞는 인천 혼잡도 데이터 가져오기
-    const now = new Date(); // 현재 시간
+    const now = new Date();
     const startDate = new Date();
     const endDate = new Date();
     const validData = list.find((item) => {
@@ -54,36 +98,40 @@ export function Home() {
       endDate.setHours(Number(atime.split('_')[1]), 0, 0);
       return (now >= startDate && now < endDate) ? item : undefined;
     });
-    // TODO : 혼잡도 맵에 넘겨줄 배열 만들어줄 로직 개발 필요
-    if (validData) console.log(validData);
+    setTime(`${startDate.getHours()}:00`);
+    if (validData) getTerminalData(validData, terminal);
   };
 
-  const DomesticFetchData = async (airport:ListItemType) => {
+  const DomesticFetchData = async (code: AirportCodeType) => {
     try {
       const response = await DomesticFlightApi.fetchDomesticFlight();
-      getDomesticCongestion(response.data.data, airport);
+      getDomesticCongestion(response.data.data, code);
     } catch (error) {
       console.error('fetchDomesticFlightApi error', error);
     }
   };
 
-  const IncheonFetchData = async () => {
+  const IncheonFetchData = async (terminal?:TerminalType) => {
     try {
       const response = await IncheonAirportApi.fetchincheonAirport('0');
-      getInchoenValidData(response.data.response.body.items);
+      getInchoenValidData(response.data.response.body.items, terminal);
     } catch (error) {
       console.error('fetchDomesticFlightApi error', error);
     }
   };
+
+  const fetchData = (code: AirportCodeType, terminal?: TerminalType) => {
+    if (code === AIRPORT_CODE.INCHEON) {
+      IncheonFetchData(terminal);
+    } else {
+      DomesticFetchData(code);
+    }
+  };
+
   const handleAirportSelect = (airport: ListItemType) => {
-    // TODO : 인천일 경우 터미널 정보 세팅 필요
     setSelectedAirport(airport);
     setChecked(false);
-    if (airport.code === AIRPORT_CODE.INCHEON) {
-      IncheonFetchData();
-    } else {
-      DomesticFetchData(airport);
-    }
+    fetchData(airport.code as AirportCodeType, airport.terminal as TerminalType);
   };
 
   // const clickFav = () => {
@@ -92,11 +140,22 @@ export function Home() {
 
   const onChange = () => {
     setChecked(!checked);
+    fetchData(selectedAirport.code as AirportCodeType, selectedAirport.terminal as TerminalType);
   };
 
   const handleRefresh = () => {
-    DomesticFetchData(selectedAirport);
+    fetchData(selectedAirport.code as AirportCodeType, selectedAirport.terminal as TerminalType);
   };
+
+  useEffect(() => {
+    setSelectedAirport({ ...selectedAirport, terminal: checked });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [checked]);
+
+  useEffect(() => {
+    fetchData(DEFAULT_CODE, TERMINAL.T1);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <Styled.Wrapper>

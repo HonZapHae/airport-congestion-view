@@ -71,6 +71,8 @@ export const CONGESTION_TXT = {
 
 export type CongestionTxtType = typeof CONGESTION_TXT[keyof typeof CONGESTION_TXT];
 
+export const DEFAULT_CODE = AIRPORT_CODE.INCHEON;
+
 export type ListItemType = {
   code: string;
   name: string;
