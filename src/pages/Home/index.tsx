@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import IconButton from '@mui/material/Button';
 import { AirportName } from './constants';
 import * as Styled from './styled';
