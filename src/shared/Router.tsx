@@ -1,16 +1,15 @@
-import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Layout } from '../components/Layout';
-import { Home } from '../pages/Home';
-import { Parking } from '../pages/Parking';
-import { Tip } from '../pages/Tip';
-import { Checklist } from '../pages/TipDetail/Checklist';
-import { DepartureProcess } from '../pages/TipDetail/DepartureProcess';
-import { Notallowed } from '../pages/TipDetail/Notallowed';
-import { Essential } from '../pages/TipDetail/Essential';
-import { Minbaggage } from '../pages/TipDetail/Minbaggage';
-import { Businfo } from '../pages/TipDetail/Businfo';
-import { AirportPhone } from '../pages/TipDetail/AirportPhone';
+import { Layout } from '@/components/Layout';
+import { Home } from '@/pages/Home';
+import { Parking } from '@/pages/Parking';
+import { Tip } from '@/pages/Tip';
+import { Checklist } from '@/pages/TipDetail/Checklist';
+import { DepartureProcess } from '@/pages/TipDetail/DepartureProcess';
+import { Notallowed } from '@/pages/TipDetail/Notallowed';
+import { Essential } from '@/pages/TipDetail/Essential';
+import { Minbaggage } from '@/pages/TipDetail/Minbaggage';
+import { Businfo } from '@/pages/TipDetail/Businfo';
+import { AirportPhone } from '@/pages/TipDetail/AirportPhone';
 
 export function Router() {
   return (

@@ -1,12 +1,11 @@
-import React from 'react';
 import styled from '@emotion/styled';
-import { TipNavbar } from '../../components/Tip/TipNavbar';
+import { TipNavbar } from '@/components/Tip/TipNavbar';
 
-import { ReactComponent as Lighter } from '../../resources/icons/icon-lighter.svg';
-import { ReactComponent as Gas } from '../../resources/icons/icon-gas.svg';
-import { ReactComponent as Gun } from '../../resources/icons/icon-gun.svg';
-import { ReactComponent as Danger } from '../../resources/icons/icon-danger.svg';
-import { ReactComponent as Battery } from '../../resources/icons/icon-battery.svg';
+import Lighter from '@/resources/icons/icon-lighter.svg?react';
+import Gas from '@/resources/icons/icon-gas.svg?react';
+import Gun from '@/resources/icons/icon-gun.svg?react';
+import Danger from '@/resources/icons/icon-danger.svg?react';
+import Battery from '@/resources/icons/icon-battery.svg?react';
 
 const StyledDiv = styled.div`
   display: flex;

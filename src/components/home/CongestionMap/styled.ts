@@ -1,19 +1,19 @@
 import styled from '@emotion/styled';
 import {
   CONGESTION_COLOR, CONGESTION_LVL, CongestionColorType, CongestionLvlType,
-} from '../../../constant';
-import { ReactComponent as CheongjuMap } from '../../../resources/images/CheongjuMap.svg';
-import { ReactComponent as DaeguMap } from '../../../resources/images/DaeguMap.svg';
-import { ReactComponent as GimhaeMap } from '../../../resources/images/GimhaeMap.svg';
-import { ReactComponent as GimpoMap } from '../../../resources/images/GimpoMap.svg';
-import { ReactComponent as IncheonMap1 } from '../../../resources/images/IncheonMap1.svg';
-import { ReactComponent as IncheonMap2 } from '../../../resources/images/IncheonMap2.svg';
-import { ReactComponent as JejuMap } from '../../../resources/images/JejuMap.svg';
+} from '@/constants';
+import CheongjuMap from '@/resources/images/CheongjuMap.svg?react';
+import DaeguMap from '@/resources/images/DaeguMap.svg?react';
+import GimhaeMap from '@/resources/images/GimhaeMap.svg?react';
+import GimpoMap from '@/resources/images/GimpoMap.svg?react';
+import IncheonMap1 from '@/resources/images/IncheonMap1.svg?react';
+import IncheonMap2 from '@/resources/images/IncheonMap2.svg?react';
+import JejuMap from '@/resources/images/JejuMap.svg?react';
 
 export const StyledDiv = styled.div`
     max-width: 440px;
     min-width: 290px;
-    height: 220px;
+    height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;

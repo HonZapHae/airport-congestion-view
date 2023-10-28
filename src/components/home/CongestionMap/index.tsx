@@ -1,7 +1,4 @@
-import React from 'react';
-import {
-  AIRPORT_CODE, AirportCodeType, CongestionLvlType, TerminalType,
-} from '../../../constant';
+import { AIRPORT_CODE, AirportCodeType, CongestionLvlType, TerminalType } from '@/constants';
 import Cheongju from './Cheongju';
 import Daegu from './Daegu';
 import Gimhae from './Gimhae';

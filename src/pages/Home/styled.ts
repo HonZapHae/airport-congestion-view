@@ -2,9 +2,7 @@ import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
   width: 100%;
-  padding-top: 80px;
-  padding-right: 24px;
-  padding-left: 24px;
+  padding: 100px 24px 100px;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -12,14 +10,16 @@ export const Wrapper = styled.div`
   justify-content: start;
   box-sizing: border-box;
   background-color: white;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export const Header = styled.div`
   width: 100%;
   height: 36px;
   position: relative;
-  /* margin: 16px 0; */
-  margin-top: 24px;
 `;
 
 export const Switch = styled.div`
@@ -42,7 +42,6 @@ export const CongestionDescWrapper = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 6px;
-  margin-top: 64px;
 `;
 
 export const RefreshWrapper = styled.div`

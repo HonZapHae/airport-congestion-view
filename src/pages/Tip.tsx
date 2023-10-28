@@ -1,15 +1,14 @@
-import React from 'react';
 import styled from '@emotion/styled';
 import { Outlet, useNavigate } from 'react-router-dom';
-import { ReactComponent as Checklist } from '../resources/icons/icon-checklist-24.svg';
-import { ReactComponent as Ticket } from '../resources/icons/icon-ticket.svg';
-import { ReactComponent as Car } from '../resources/icons/icon-car.svg';
-import { ReactComponent as Exclamation } from '../resources/icons/icon-exclamation.svg';
-import { ReactComponent as Luggage } from '../resources/icons/icon-luggage.svg';
-import { ReactComponent as Scale } from '../resources/icons/icon-scale.svg';
-import { ReactComponent as Bus } from '../resources/icons/icon-bus.svg';
-import { ReactComponent as Phone } from '../resources/icons/icon-phone.svg';
-import { ReactComponent as ArrowRight } from '../resources/icons/icon-arrow-right.svg';
+import Checklist from '@/resources/icons/icon-checklist-24.svg?react';
+import Ticket from '@/resources/icons/icon-ticket.svg?react';
+import Car from '@/resources/icons/icon-car.svg?react';
+import Exclamation from '@/resources/icons/icon-exclamation.svg?react';
+import Luggage from '@/resources/icons/icon-luggage.svg?react';
+import Scale from '@/resources/icons/icon-scale.svg?react';
+import Bus from '@/resources/icons/icon-bus.svg?react';
+import Phone from '@/resources/icons/icon-phone.svg?react';
+import ArrowRight from '@/resources/icons/icon-arrow-right.svg?react';
 
 const StyledDiv = styled.div`
   display: flex;;

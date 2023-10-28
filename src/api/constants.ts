@@ -1,1 +1,1 @@
-export const SERVICE_KEY = encodeURIComponent(process.env.REACT_APP_OPEN_API_KEY as string);
+export const SERVICE_KEY = encodeURIComponent(import.meta.env.VITE_OPEN_API_KEY as string);

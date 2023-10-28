@@ -1,14 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
 import { Global } from '@emotion/react';
 import { ToastContainer } from 'react-toastify';
 import { Background, GlobalStyles } from './styled';
-import { DomesticFlightApi } from './api/domesticFlight';
-// import { IncheonAirportApi } from "./api/incheonAirport";
-import { Router } from './shared/Router';
+import { DomesticFlightApi } from '@/api/domesticFlight';
+// import { IncheonAirportApi } from "@/api/incheonAirport";
+import { Router } from '@/shared/Router';
 
 function App() {
-  const [value, setValue] = useState<number>(0);
   /**
    * 국제선 api
    */

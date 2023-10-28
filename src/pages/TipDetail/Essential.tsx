@@ -1,7 +1,6 @@
-import React from 'react';
 import styled from '@emotion/styled';
-import { Checkbox, FormControlLabel, FormGroup } from '@mui/material';
-import { TipNavbar } from '../../components/Tip/TipNavbar';
+import { Checkbox, FormControlLabel } from '@mui/material';
+import { TipNavbar } from '@/components/Tip/TipNavbar';
 
 const StyledDiv = styled.div`
   display: flex;

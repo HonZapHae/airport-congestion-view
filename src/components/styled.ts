@@ -13,4 +13,5 @@ export const StyledDiv = styled.div`
     min-width: 350px;
     height: 100vh;
     box-shadow: rgba(130, 130, 130, 0.15) 0px 0px 20px;
+    overflow-y: hidden;
 `;

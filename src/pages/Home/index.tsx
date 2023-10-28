@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import IconButton from '@mui/material/Button';
 import { AirportName } from './constants';
 import * as Styled from './styled';
-import { CongestionData, DomesticFlightApi } from '../../api/domesticFlight';
-import { IncheonAirportApi, IncheonCongestionData } from '../../api/incheonAirport';
-import CongestionDesc from '../../components/home/CongestionDesc';
-import CongestionMap from '../../components/home/CongestionMap';
-import Search from '../../components/Search';
-import SwitchButton from '../../components/SwitchButton';
+import { CongestionData, DomesticFlightApi } from '@/api/domesticFlight';
+import { IncheonAirportApi, IncheonCongestionData } from '@/api/incheonAirport';
+import CongestionDesc from '@/components/home/CongestionDesc';
+import CongestionMap from '@/components/home/CongestionMap';
+import Search from '@/components/Search';
+import SwitchButton from '@/components/SwitchButton';
 import {
   AIRPORT_CODE,
   AIRPORT_PARKING,
@@ -16,11 +16,11 @@ import {
   ListItemType,
   TERMINAL,
   TerminalType,
-} from '../../constant';
-import { ReactComponent as Favicon } from '../../resources/icons/fav_icon.svg';
-import { ReactComponent as Refresh } from '../../resources/icons/refresh_icon.svg';
-import { ReactComponent as Airplane } from '../../resources/icons/airplane_small_icon.svg';
-import { DEFAULT_CODE } from '../Parking/constants';
+} from '@/constants';
+import { DEFAULT_CODE } from '@/constants';
+// import Favicon from '@/resources/icons/fav_icon.svg?react';
+import Refresh from '@/resources/icons/refresh_icon.svg?react';
+import Airplane from '@/resources/icons/airplane_small_icon.svg?react';
 
 export function Home() {
   const [
@@ -31,7 +31,7 @@ export function Home() {
     name: AIRPORT_PARKING.INCHEON1,
     terminal: TERMINAL.T1,
   });
-  const [fav, setFav] = useState(true);
+  // const [fav, setFav] = useState(true);
   const [checked, setChecked] = useState(false);
   const [congestionList, setCongestionList] = useState<CongestionLvlType[]>([]);
   const [time, setTime] = useState('00:00');
@@ -111,7 +111,7 @@ export function Home() {
     }
   };
 
-  const IncheonFetchData = async (code:AirportCodeType, terminal?:TerminalType) => {
+  const IncheonFetchData = async (terminal?:TerminalType) => {
     try {
       const response = await IncheonAirportApi.fetchincheonAirport('0');
       getInchoenValidData(response.data.response.body.items, terminal);
@@ -122,7 +122,7 @@ export function Home() {
 
   const fetchData = (code: AirportCodeType, terminal?: TerminalType) => {
     if (code === AIRPORT_CODE.INCHEON) {
-      IncheonFetchData(code, terminal);
+      IncheonFetchData(terminal);
     } else {
       DomesticFetchData(code);
     }
@@ -134,9 +134,9 @@ export function Home() {
     fetchData(airport.code as AirportCodeType, airport.terminal as TerminalType);
   };
 
-  const clickFav = () => {
-    setFav(!fav);
-  };
+  // const clickFav = () => {
+  //   setFav(!fav);
+  // };
 
   const onChange = () => {
     setChecked(!checked);

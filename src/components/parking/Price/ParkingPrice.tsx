@@ -1,7 +1,5 @@
 import styled from '@emotion/styled';
-
-import * as React from 'react';
-import ParkinRecipt from '../../../resources/icons/icon-parking-recipt.png';
+import ParkinRecipt from '@/resources/icons/icon-parking-recipt.png';
 
 const StyledDiv = styled.div`
   display: flex;

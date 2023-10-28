@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styled from '@emotion/styled';
-import { Icon } from '@mui/material';
-import { TipNavbar } from '../../components/Tip/TipNavbar';
-import { ReactComponent as Bag } from '../../resources/icons/icon-bag.svg';
-import { ReactComponent as Bottle } from '../../resources/icons/icon-bottle.svg';
-import { ReactComponent as Carrier } from '../../resources/icons/icon-carrier.svg';
-import { ReactComponent as Luggages } from '../../resources/icons/icon-luggages.svg';
-import { ReactComponent as BabyPackage } from '../../resources/icons/icon-baby-package.svg';
-import { ReactComponent as ArrowTop } from '../../resources/icons/icon-arrow-top.svg';
-import { ReactComponent as ArrowDown } from '../../resources/icons/icon-arrow-down.svg';
+import { TipNavbar } from '@/components/Tip/TipNavbar';
+import Bag from '@/resources/icons/icon-bag.svg?react';
+import Bottle from '@/resources/icons/icon-bottle.svg?react';
+import Carrier from '@/resources/icons/icon-carrier.svg?react';
+import Luggages from '@/resources/icons/icon-luggages.svg?react';
+import BabyPackage from '@/resources/icons/icon-baby-package.svg?react';
+import ArrowTop from '@/resources/icons/icon-arrow-top.svg?react';
+import ArrowDown from '@/resources/icons/icon-arrow-down.svg?react';
 
 const StyledDiv = styled.div`
   display: flex;

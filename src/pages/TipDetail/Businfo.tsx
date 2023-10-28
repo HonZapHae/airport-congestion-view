@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styled from '@emotion/styled';
-import { TipNavbar } from '../../components/Tip/TipNavbar';
-import { ReactComponent as ArrowTop } from '../../resources/icons/icon-arrow-top.svg';
-import { ReactComponent as ArrowDown } from '../../resources/icons/icon-arrow-down.svg';
+import { TipNavbar } from '@/components/Tip/TipNavbar';
+import ArrowTop from '@/resources/icons/icon-arrow-top.svg?react';
+import ArrowDown from '@/resources/icons/icon-arrow-down.svg?react';
 
 const StyledDiv = styled.div`
   display: flex;

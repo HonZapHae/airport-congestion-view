@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import {
-  Avatar, List, ListItem, ListItemAvatar, ListItemButton, ListItemText,
+  List, ListItem, ListItemAvatar, ListItemButton, ListItemText,
 } from '@mui/material';
 import Paper from '@mui/material/Paper';
 import InputBase from '@mui/material/InputBase';
@@ -11,7 +11,7 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import NorthWestIcon from '@mui/icons-material/NorthWest';
 import FlightLandIcon from '@mui/icons-material/FlightLand';
 import { Wrapper, WrapperFake, Container } from './styled';
-import { ListItemType } from '../../constant';
+import { ListItemType } from '@/constants';
 
 type SearchProps = {
   onAirportSelect: (airport: ListItemType) => void,

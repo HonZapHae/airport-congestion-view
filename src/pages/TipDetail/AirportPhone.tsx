@@ -1,7 +1,6 @@
-import React from 'react';
 import styled from '@emotion/styled';
 import CallIcon from '@mui/icons-material/Call';
-import { TipNavbar } from '../../components/Tip/TipNavbar';
+import { TipNavbar } from '@/components/Tip/TipNavbar';
 
 const StyledDiv = styled.div`
   display: flex;
