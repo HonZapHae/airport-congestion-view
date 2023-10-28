@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
+import 'react-toastify/dist/ReactToastify.css';
 import { Global } from '@emotion/react';
+import { ToastContainer } from 'react-toastify';
 import { Background, GlobalStyles } from './styled';
 import { DomesticFlightApi } from '@/api/domesticFlight';
 // import { IncheonAirportApi } from "@/api/incheonAirport";
@@ -27,6 +29,7 @@ function App() {
       <Global styles={GlobalStyles} />
       <Background>
         <Router />
+        <ToastContainer position="top-center" />
       </Background>
     </>
   );
