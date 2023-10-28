@@ -1,4 +1,4 @@
-import { CONGESTION_COLOR, CONGESTION_LVL, CONGESTION_TXT } from '../../../constant';
+import { CONGESTION_COLOR, CONGESTION_LVL, CONGESTION_TXT } from '@/constants';
 
 export const CONGESTION_DESC_INFO = [
   {

@@ -1,4 +1,3 @@
-import React from 'react';
 import { CongestionMapProps } from '../types';
 import { StyledDiv, StyledJejuMap } from '../styled';
 

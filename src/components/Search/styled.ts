@@ -8,6 +8,7 @@ export const Wrapper = styled.div`
   width: 100%;
   max-width: 500px;
   min-width: 350px;
+  height: fit-content;
   top: 0;
   background-color: white;
   z-index: 9;
@@ -16,7 +17,7 @@ export const Wrapper = styled.div`
 
 export const Container = styled.div`
   display: flex;
-  padding: 24px;
+  padding: 24px 24px 0;
   z-index: 1;
   cursor: pointer;
 `;

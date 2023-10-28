@@ -1,18 +1,17 @@
-import React from 'react';
 import { ImageViewWrapper } from './styled';
 import {
   AIRPORT_CODE,
   AirportCodeType,
   TERMINAL,
   TerminalType,
-} from '../../../constant';
-import { ReactComponent as CheongjuParking } from '../../../resources/images/CheongjuParking.svg';
-import { ReactComponent as DaeguParking } from '../../../resources/images/DaeguParking.svg';
-import { ReactComponent as GimhaeParking } from '../../../resources/images/GimhaeParking.svg';
-import { ReactComponent as GimpoParking } from '../../../resources/images/GimpoParking.svg';
-import { ReactComponent as IncheonParking1 } from '../../../resources/images/IncheonParking1.svg';
-import { ReactComponent as IncheonParking2 } from '../../../resources/images/IncheonParking2.svg';
-import { ReactComponent as JejuParking } from '../../../resources/images/JejuParking.svg';
+} from '@/constants';
+import CheongjuParking from '@/resources/images/CheongjuParking.svg?react';
+import DaeguParking from '@/resources/images/DaeguParking.svg?react';
+import GimhaeParking from '@/resources/images/GimhaeParking.svg?react';
+import GimpoParking from '@/resources/images/GimpoParking.svg?react';
+import IncheonParking1 from '@/resources/images/IncheonParking1.svg?react';
+import IncheonParking2 from '@/resources/images/IncheonParking2.svg?react';
+import JejuParking from '@/resources/images/JejuParking.svg?react';
 
 type Props = {
   airportCode: AirportCodeType;

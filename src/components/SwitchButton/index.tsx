@@ -1,4 +1,3 @@
-import React from 'react';
 import * as Styled from './styled2';
 
 type SwitchProps = {

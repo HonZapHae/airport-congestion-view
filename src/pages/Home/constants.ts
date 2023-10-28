@@ -1,4 +1,4 @@
-import { AIRPORT_CODE, AIRPORT_NM } from '../../constant';
+import { AIRPORT_CODE, AIRPORT_NM } from '@/constants';
 
 export const AirportName = [
   { code: AIRPORT_CODE.INCHEON, name: AIRPORT_NM.INCHEON },

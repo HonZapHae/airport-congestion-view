@@ -1,7 +1,6 @@
-import React from 'react';
 import styled from '@emotion/styled';
 import { useNavigate } from 'react-router-dom';
-import { ReactComponent as ArrowLeft } from '../../resources/icons/icon-arrow-left.svg';
+import ArrowLeft from '@/resources/icons/icon-arrow-left.svg?react';
 
 interface TipNavbarProps {
   title: string; // title 속성을 문자열로 정의

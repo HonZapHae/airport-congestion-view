@@ -1,6 +1,5 @@
-import React from 'react';
 import * as Styled from './styled';
-import { ReactComponent as Bubbleicon } from '../../../resources/icons/bubble_icon.svg';
+import Bubbleicon from '@/resources/icons/bubble_icon.svg?react';
 
 type Props = {
   remain: number,

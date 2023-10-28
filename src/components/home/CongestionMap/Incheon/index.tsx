@@ -1,7 +1,6 @@
-import React from 'react';
 import { CongestionMapProps } from '../types';
 import { StyledDiv, StyledIncheonMap1, StyledIncheonMap2 } from '../styled';
-import { TERMINAL, TerminalType } from '../../../../constant';
+import { TERMINAL, TerminalType } from '../../../../constants';
 
 type Props = {
   terminal: TerminalType;

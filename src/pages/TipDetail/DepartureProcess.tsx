@@ -1,6 +1,5 @@
-import React from 'react';
 import styled from '@emotion/styled';
-import { TipNavbar } from '../../components/Tip/TipNavbar';
+import { TipNavbar } from '@/components/Tip/TipNavbar';
 
 const StyledDiv = styled.div`
   display: flex;
@@ -16,16 +15,20 @@ const Wrapper = styled.div`
 `;
 
 const Body = styled.div`
-display: flex;
-flex-direction: column;
-margin-top: 144px;
-padding-bottom: 120px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 144px;
+  padding-bottom: 120px;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+      display: none;
+  }
 `;
 
 const List = styled.div`
-display: flex;
-flex-direction: column;
-gap: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 `;
 
 const ListItem = styled.div`

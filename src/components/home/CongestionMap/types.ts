@@ -1,4 +1,4 @@
-import { CongestionLvlType } from '../../../constant';
+import { CongestionLvlType } from '@/constants';
 
 export type CongestionMapProps = {
   congestions: CongestionLvlType[]

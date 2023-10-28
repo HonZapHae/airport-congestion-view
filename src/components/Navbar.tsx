@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   Tabs, Tab, createTheme, ThemeProvider,
 } from '@mui/material';
 import { Link } from 'react-router-dom';
-import { ReactComponent as Airplane } from '../resources/icons/airplane_icon.svg';
-import { ReactComponent as Car } from '../resources/icons/car_icon.svg';
-import { ReactComponent as Luggage } from '../resources/icons/luggage_icon.svg';
+import Airplane from '@/resources/icons/airplane_icon.svg?react';
+import Car from '@/resources/icons/car_icon.svg?react';
+import Luggage from '@/resources/icons/luggage_icon.svg?react';
 
 const theme = createTheme({
   palette: {

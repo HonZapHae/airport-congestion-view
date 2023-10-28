@@ -1,11 +1,7 @@
 import axios from 'axios';
 import { OpenApiParkingUrls } from '../openApiUrls';
-import {
-  AIRPORT_CODE,
-  AirportCodeType,
-  TERMINAL,
-  TerminalType,
-} from '../../constant';
+import { AirportCodeType, AIRPORT_CODE } from '@/constants';
+
 
 const headers = {
   'Access-Control-Allow-Origin': 'http://localhost:3000',

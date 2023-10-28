@@ -1,9 +1,8 @@
-import React from 'react';
 import styled from '@emotion/styled';
-import { ReactComponent as Passport } from '../../resources/icons/icon-passport.svg';
-import { ReactComponent as Visa } from '../../resources/icons/icon-visa.svg';
-import { ReactComponent as Driver } from '../../resources/icons/icon-driver.svg';
-import { TipNavbar } from '../../components/Tip/TipNavbar';
+import Passport from '@/resources/icons/icon-passport.svg?react';
+import Visa from '@/resources/icons/icon-visa.svg?react';
+import Driver from '@/resources/icons/icon-driver.svg?react';
+import { TipNavbar } from '@/components/Tip/TipNavbar';
 
 const StyledDiv = styled.div`
   display: flex;
@@ -22,6 +21,10 @@ const Body = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 132px;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 const Info = styled.div`

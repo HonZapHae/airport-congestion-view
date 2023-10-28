@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import IconButton from '@mui/material/Button';
 import * as Styled from './styled';
-import { ParkingApi } from '../../api/parking';
+import { ParkingApi } from '@/api/parking';
 import {
   AIRPORT_CODE,
   AIRPORT_PARKING,
   AirportCodeType,
   ListItemType, PARKING_NAME, ParkingDataType, TERMINAL,
   TerminalType,
-} from '../../constant';
-import CongestionBar from '../../components/parking/CongestionBar';
-import Search from '../../components/Search';
+} from '@/constants';
+import CongestionBar from '@/components/parking/CongestionBar';
+import Search from '@/components/Search';
+import ParkingPrice from '@/components/parking/Price/ParkingPrice';
 import { AirportParking, DEFAULT_CODE } from './constants';
-import ImageView from '../../components/parking/ImageView';
-import { parseParkingData } from '../../utils/parser';
-import { ReactComponent as Car } from '../../resources/icons/icon-car.svg';
-import { ReactComponent as Refresh } from '../../resources/icons/refresh_icon.svg';
-import ParkingPrice from '../../components/parking/Price/ParkingPrice';
+import ImageView from '@/components/parking/ImageView';
+import { parseParkingData } from '@/utils/parser';
+import Car from '@/resources/icons/icon-car.svg?react';
+import Refresh from '@/resources/icons/refresh_icon.svg?react';
 
 type IncheonParkingApiResponseType = {
   datetm: string;

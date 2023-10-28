@@ -1,4 +1,4 @@
-import { ParkingDataType } from '../../constant';
+import { ParkingDataType } from '@/constants';
 
 function parseParkingData(doc: string) {
   const domparser = new DOMParser();
