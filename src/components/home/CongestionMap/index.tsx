@@ -1,4 +1,4 @@
-import { AIRPORT_CODE, AirportCodeType, TerminalType } from '@/constants';
+import { AIRPORT_CODE, AirportCodeType, CongestionLvlType, TerminalType } from '@/constants';
 import Cheongju from './Cheongju';
 import Daegu from './Daegu';
 import Gimhae from './Gimhae';
@@ -9,24 +9,25 @@ import Jeju from './Jeju';
 type Props = {
     airportCode: AirportCodeType;
     terminalCode: TerminalType;
+    congestionArray: CongestionLvlType[];
 };
 
 function CongestionMap(props: Props) {
-  const { airportCode, terminalCode } = props;
+  const { airportCode, terminalCode, congestionArray } = props;
 
   switch (airportCode) {
     case AIRPORT_CODE.CHEONGJU:
-      return <Cheongju congestions={[1]} />;
+      return <Cheongju congestions={congestionArray} />;
     case AIRPORT_CODE.DAEGU:
-      return <Daegu congestions={[1, 3, 2, 4]} />;
+      return <Daegu congestions={congestionArray} />;
     case AIRPORT_CODE.GIMHAE:
-      return <Gimhae congestions={[1, 3, 2, 4]} />;
+      return <Gimhae congestions={congestionArray} />;
     case AIRPORT_CODE.GIMPO:
-      return <Gimpo congestions={[4]} />;
+      return <Gimpo congestions={congestionArray} />;
     case AIRPORT_CODE.JEJU:
-      return <Jeju congestions={[1, 3, 2, 4]} />;
+      return <Jeju congestions={congestionArray} />;
     default:
-      return <Incheon congestions={[1, 3, 2, 4]} terminal={terminalCode} />;
+      return <Incheon congestions={congestionArray} terminal={terminalCode} />;
   }
 }
 

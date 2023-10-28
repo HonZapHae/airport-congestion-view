@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import CallIcon from '@mui/icons-material/Call';
 import { TipNavbar } from '@/components/Tip/TipNavbar';
 
 const StyledDiv = styled.div`
@@ -15,11 +16,11 @@ const Wrapper = styled.div`
 `;
 
 const Body = styled.div`
-display: flex;
-flex-direction: column;
-margin-top: 104px;
-padding-bottom: 80px;
-gap: 24px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 104px;
+  padding-bottom: 80px;
+  gap: 24px;
 `;
 
 const List = styled.div`
@@ -45,13 +46,23 @@ const ListTitle = styled.div`
   line-height: 150%; /* 27px */
   letter-spacing: -0.54px;
 `;
-const ListBody = styled.div`
-  color: #191919;
+const ListBody = styled.a`
   font-family: Roboto;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 150%; /* 24px */
+`;
+
+const CustomCallIcon = styled(CallIcon)`
+  font-size: 14px;
+`;
+
+const TelWrapper = styled.div`
+  display: flex;
+  gap: 5px;
+  justify-content: start;
+  align-items: center;
 `;
 
 export function AirportPhone() {
@@ -63,27 +74,45 @@ export function AirportPhone() {
           <List>
             <ListItem>
               <ListTitle>인천국제공항</ListTitle>
-              <ListBody>1577-2600</ListBody>
+              <TelWrapper>
+                <CustomCallIcon />
+                <ListBody href="tel:1577-2600">1577-2600</ListBody>
+              </TelWrapper>
             </ListItem>
             <ListItem>
               <ListTitle>김포공항</ListTitle>
-              <ListBody>1661-2626</ListBody>
+              <TelWrapper>
+                <CustomCallIcon />
+                <ListBody href="tel:1661-2626">1661-2626</ListBody>
+              </TelWrapper>
             </ListItem>
             <ListItem>
               <ListTitle>청주공항</ListTitle>
-              <ListBody>043-210-6315</ListBody>
+              <TelWrapper>
+                <CustomCallIcon />
+                <ListBody href="tel:043-210-6315">043-210-6315</ListBody>
+              </TelWrapper>
             </ListItem>
             <ListItem>
               <ListTitle>제주공항</ListTitle>
-              <ListBody>1661-2626</ListBody>
+              <TelWrapper>
+                <CustomCallIcon />
+                <ListBody href="tel:043-210-6315">1661-2626</ListBody>
+              </TelWrapper>
             </ListItem>
             <ListItem>
               <ListTitle>김해공항</ListTitle>
-              <ListBody>1661-2626</ListBody>
+              <TelWrapper>
+                <CustomCallIcon />
+                <ListBody href="tel:1661-2626">1661-2626</ListBody>
+              </TelWrapper>
             </ListItem>
             <ListItem>
               <ListTitle>대구공항</ListTitle>
-              <ListBody>053-980-5252</ListBody>
+              <TelWrapper>
+                <CustomCallIcon />
+                <ListBody href="tel:053-980-5252">053-980-5252</ListBody>
+              </TelWrapper>
             </ListItem>
           </List>
         </Body>
