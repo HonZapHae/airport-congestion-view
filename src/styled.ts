@@ -7,6 +7,7 @@ export const Background = styled.div`
   align-items: center;
   justify-content: center;
   overflow-y: hidden;
+  background-color: #fcfcfc;
 `;
 
 export const GlobalStyles = css`

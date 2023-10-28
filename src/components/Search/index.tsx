@@ -10,7 +10,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import NorthWestIcon from '@mui/icons-material/NorthWest';
 import FlightLandIcon from '@mui/icons-material/FlightLand';
-import { Wrapper, WrapperFake } from './styled';
+import { Wrapper, WrapperFake, Container } from './styled';
 import { ListItemType } from '../../constant';
 
 type SearchProps = {
@@ -34,128 +34,115 @@ export default function Search({ onAirportSelect, options }: SearchProps) {
 
   return (
     <Wrapper>
-      <Paper
-        component="form"
-        sx={{
-          p: '2px 4px',
-          display: 'flex',
-          alignItems: 'center',
-          boxShadow: 'none',
-          border: '1px solid #DBDBDB',
-          '&:hover': { border: '1px solid #631EC6' },
-          '&:focus': { border: '1px solid #631EC6' },
-          '&:active': { border: '1px solid #631EC6' },
-        }}
-        onClick={toggleDropdown}
-      >
-        <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
-          <ArrowBackIosIcon />
-        </IconButton>
-        <InputBase
+      <Container>
+        <Paper
+          component="form"
           sx={{
-            ml: 1,
-            flex: 1,
-            color: '#631EC6',
-            fontWeight: '600',
+            p: '2px 4px',
+            width: '100%',
+            display: 'flex',
+            alignItems: 'center',
             boxShadow: 'none',
+            border: '1px solid #DBDBDB',
+            '&:hover': { border: '1px solid #631EC6' },
+            '&:focus': { border: '1px solid #631EC6' },
+            '&:active': { border: '1px solid #631EC6' },
           }}
-          placeholder="공항을 변경할 수 있어요"
-          inputProps={{ 'aria-label': 'search google maps' }}
-          value={values}
-        />
-        <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
-          <SearchIcon />
-        </IconButton>
-      </Paper>
-      {/* window Render */}
-      {/* <Box
-        sx={{
-          width: '100%',
-          height: 400,
-          maxWidth: 360,
-          bgcolor: 'background.paper',
-        }}
-      >
-        <FixedSizeList
-          height={400}
-          width={360}
-          itemSize={46}
-          itemCount={6}
-          overscanCount={5}
+          onClick={toggleDropdown}
         >
-          {renderRow}
-        </FixedSizeList>
-      </Box> */}
-      {isOpen ? (
-        <>
-          {/* <WrapperFake onClick={toggleDropdown} /> */}
-          <List
-            dense
+          <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
+            <ArrowBackIosIcon />
+          </IconButton>
+          <InputBase
             sx={{
-              flexDirection: 'column',
-              width: '100%',
-              bgcolor: 'background.paper',
-              padding: '12px 0',
-              // paddingTop: '12px',
-              position: 'absolute',
-              top: '50px',
-              backgroundColor: '#FAF9FC',
-              borderRadius: '0 0 6px 6px',
-              overflow: 'hidden',
-              zIndex: '4444',
-              boxShadow: '0px 4px 8px 0px rgba(0,0,0,0.05)',
+              ml: 1,
+              flex: 1,
+              color: '#631EC6',
+              fontWeight: '600',
+              boxShadow: 'none',
             }}
-          >
-            {options.map((airport) => {
-              const labelId = `checkbox-list-secondary-label-${airport.code}`;
-              return (
-                <ListItem
-                  key={`${airport.code}${airport.terminal || ''}`}
-                  sx={{
-                    width: 'auto',
-                    backgroundColor: '#FAF9FC',
-                    '&:hover': {
-                      backgroundColor: '#fcfbff',
-                    },
-                  }}
-                  onClick={() => {
-                    handleAirportClick(airport);
-                    toggleDropdown();
-                  }}
-                  secondaryAction={(
-                    <IconButton
-                      type="button"
-                      sx={{ p: '10px' }}
-                      aria-label="search"
-                    >
-                      <NorthWestIcon sx={{ width: '18px', color: '#CAD1D9' }} />
-                    </IconButton>
-                  )}
-                  disablePadding
-                >
-                  <ListItemButton>
-                    <ListItemAvatar>
-                      {/* <Avatar
+            placeholder="공항을 변경할 수 있어요"
+            inputProps={{ 'aria-label': 'search google maps' }}
+            value={values}
+          />
+          <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
+            <SearchIcon />
+          </IconButton>
+        </Paper>
+        {isOpen ? (
+          <>
+            <WrapperFake onClick={toggleDropdown} />
+            <List
+              dense
+              sx={{
+                flexDirection: 'column',
+                maxWidth: '468px',
+                width: '500px',
+                bgcolor: 'background.paper',
+                padding: '12px 0',
+                // paddingTop: '12px',
+                position: 'absolute',
+                top: '76px',
+                backgroundColor: '#FAF9FC',
+                borderRadius: '0 0 6px 6px',
+                overflow: 'hidden',
+                zIndex: '999999',
+                boxShadow: '0px 4px 8px 0px rgba(0,0,0,0.05)',
+              }}
+            >
+              {options.map((airport) => {
+                const labelId = `checkbox-list-secondary-label-${airport.code}`;
+                return (
+                  <ListItem
+                    key={`${airport.code}${airport.terminal || ''}`}
+                    sx={{
+                      width: 'auto',
+                      backgroundColor: '#FAF9FC',
+                      '&:hover': {
+                        backgroundColor: '#fcfbff',
+                      },
+                    }}
+                    onClick={() => {
+                      handleAirportClick(airport);
+                      toggleDropdown();
+                    }}
+                    secondaryAction={(
+                      <IconButton
+                        type="button"
+                        sx={{ p: '10px' }}
+                        aria-label="search"
+                      >
+                        <NorthWestIcon
+                          sx={{ width: '18px', color: '#CAD1D9' }}
+                        />
+                      </IconButton>
+                    )}
+                    disablePadding
+                  >
+                    <ListItemButton>
+                      <ListItemAvatar>
+                        {/* <Avatar
                         alt={`Avatar n°${airport + 1}`}
                         src=""
                         sx={{ backgroundColor: '#F6EFFF' }}
                       /> */}
-                      <IconButton
-                        type="button"
-                        sx={{ p: '10px', backgroundColor: '#F6EFFF' }}
-                        aria-label="search"
-                      >
-                        <FlightLandIcon sx={{ color: '#CFB4F6' }} />
-                      </IconButton>
-                    </ListItemAvatar>
-                    <ListItemText id={labelId} primary={`${airport.name}`} />
-                  </ListItemButton>
-                </ListItem>
-              );
-            })}
-          </List>
-        </>
-      ) : null}
+                        <IconButton
+                          type="button"
+                          sx={{ p: '10px', backgroundColor: '#F6EFFF' }}
+                          aria-label="search"
+                        >
+                          <FlightLandIcon sx={{ color: '#CFB4F6' }} />
+                        </IconButton>
+                      </ListItemAvatar>
+                      <ListItemText id={labelId} primary={`${airport.name}`} />
+                    </ListItemButton>
+                  </ListItem>
+                );
+              })}
+            </List>
+          </>
+        ) : null}
+      </Container>
     </Wrapper>
   );
 }

@@ -8,18 +8,27 @@ interface TipNavbarProps {
 }
 
 const NavBar = styled.div`
-  top: 0;
-  width: 100%;
+  /* top: 0; */
+  /* left: 0; */
+
   position: fixed;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 16px;
   background-color: white;
-  padding-top: 48px;
-  padding-bottom: 16px;
+  /* margin: 0 auto; */
+
   z-index: 33333;
   cursor: pointer;
+`;
+
+const Container = styled.div`
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  width: 100%;
+  padding-top: 48px;
+  padding-bottom: 16px;
+  max-width: 500px;
+  margin: 0 auto;
 `;
 
 const Title = styled.div`
@@ -33,8 +42,10 @@ export function TipNavbar({ title }: TipNavbarProps) {
   const navigate = useNavigate();
   return (
     <NavBar onClick={() => navigate(-1)}>
-      <ArrowLeft />
-      <Title>{title}</Title>
+      <Container>
+        <ArrowLeft />
+        <Title>{title}</Title>
+      </Container>
     </NavBar>
   );
 }

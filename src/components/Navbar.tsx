@@ -44,15 +44,31 @@ export function Navbar() {
         textColor="secondary"
         variant="fullWidth"
         sx={{
-          '& .MuiTabs-flexContainer': { height: 100 }, bgcolor: 'background.paper', height: 100, width: '500px', zIndex: '999999', bottom: '0', position: 'fixed',
+          '& .MuiTabs-flexContainer': { height: 88 }, bgcolor: 'background.paper', height: 80, width: '500px', zIndex: '999999', bottom: '0', position: 'fixed',
         }}
         TabIndicatorProps={{ sx: { top: 0, backgroundColor: 'secondary.main' } }}
         value={value}
         onChange={handleChange}
       >
-        <Tab icon={<Airplane fill={value === 0 ? '#e9daff' : '#a766f2'} />} sx={{ color: 'text.primary' }} label="혼잡도 뷰" to="/" component={Link} />
-        <Tab icon={<Car fill={value === 1 ? '#e9daff' : '#a766f2'} />} sx={{ color: 'text.primary' }} label="주차장" to="/parking" component={Link} />
-        <Tab icon={<Luggage fill={value === 2 ? '#e9daff' : '#a766f2'} />} sx={{ color: 'text.primary' }} label="공항이용 팁" to="/tip" component={Link} />
+        <Tab icon={<Airplane fill={value === 0 ? '#e9daff' : '#a766f2'} />} sx={{ color: 'text.primary', fontSize: '12px', gap: '2px' }} label="혼잡도 뷰" to="/" component={Link} />
+        <Tab
+          icon={<Car fill={value === 1 ? '#e9daff' : '#a766f2'} />}
+          sx={{
+            color: 'text.primary', fontSize: '12px', gap: '2px',
+          }}
+          label="주차장"
+          to="/parking"
+          component={Link}
+        />
+        <Tab
+          icon={<Luggage fill={value === 2 ? '#e9daff' : '#a766f2'} />}
+          sx={{
+            color: 'text.primary', fontSize: '12px', gap: '2px',
+          }}
+          label="공항이용 팁"
+          to="/tip"
+          component={Link}
+        />
       </Tabs>
     </ThemeProvider>
 

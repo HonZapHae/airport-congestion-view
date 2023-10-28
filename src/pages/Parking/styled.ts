@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
   width: 100%;
-  padding-top: 30px;
+  padding-top: 120px;
   padding-right: 24px;
   padding-left: 24px;
   flex: 1;
@@ -60,6 +60,7 @@ export const CongestionBarContainer = styled.div`
   flex-direction: column;
   align-items: center;
   align-self: stretch;
+  padding-bottom: 96px;
   &::-webkit-scrollbar {
     display: none;
   }

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 import IconButton from '@mui/material/Button';
 import * as Styled from './styled';
 import { ParkingApi } from '../../api/parking';
@@ -6,7 +7,10 @@ import {
   AIRPORT_CODE,
   AIRPORT_PARKING,
   AirportCodeType,
-  ListItemType, PARKING_NAME, ParkingDataType, TERMINAL,
+  ListItemType,
+  PARKING_NAME,
+  ParkingDataType,
+  TERMINAL,
   TerminalType,
 } from '../../constant';
 import CongestionBar from '../../components/parking/CongestionBar';
@@ -16,19 +20,17 @@ import ImageView from '../../components/parking/ImageView';
 import { parseParkingData } from '../../utils/parser';
 import { ReactComponent as Car } from '../../resources/icons/icon-car.svg';
 import { ReactComponent as Refresh } from '../../resources/icons/refresh_icon.svg';
+import ParkingPrice from '../../components/parking/Price/ParkingPrice';
 
 type IncheonParkingApiResponseType = {
   datetm: string;
   floor: string;
   parking: string;
   parkingarea: string;
-}
+};
 
 export function Parking() {
-  const [
-    selectedAirport,
-    setSelectedAirport,
-  ] = useState<ListItemType>({
+  const [selectedAirport, setSelectedAirport] = useState<ListItemType>({
     code: DEFAULT_CODE,
     name: AIRPORT_PARKING.INCHEON1,
     terminal: TERMINAL.T1,
@@ -40,13 +42,13 @@ export function Parking() {
       const response = await ParkingApi.fetchParking(code);
       if (code === AIRPORT_CODE.INCHEON) {
         const parkings = response.data.response.body.items
-          .filter(
-            (v: IncheonParkingApiResponseType) => (
-              terminal === TERMINAL.T1
-                ? v.floor.includes('T1')
-                : v.floor.includes('T2')
-            ),
-          ).map((v: IncheonParkingApiResponseType) => ({
+          .filter((v: IncheonParkingApiResponseType) =>
+            terminal === TERMINAL.T1
+              ? v.floor.includes('T1')
+              : v.floor.includes('T2'),
+          )
+
+          .map((v: IncheonParkingApiResponseType) => ({
             name: v.floor,
             remain: Number(v.parkingarea) - Number(v.parking),
             all: Number(v.parkingarea),
@@ -58,7 +60,9 @@ export function Parking() {
       // eslint-disable-next-line no-console
       console.error('fetchParkingApi error', error);
       // eslint-disable-next-line no-alert
-      alert('주차장 정보를 조회하는 데 실패했습니다. 잠시 후 다시 시도해 주세요.');
+      toast.error(
+        '주차장 정보를 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.',
+      );
     }
   };
 
@@ -67,13 +71,21 @@ export function Parking() {
     fetchData(airport.code as AirportCodeType, airport.terminal);
   };
 
+  const notify = (message: string) => {
+    toast(message);
+  };
+
   const handleRefresh = () => {
-    fetchData(selectedAirport.code as AirportCodeType, selectedAirport.terminal);
+    fetchData(
+      selectedAirport.code as AirportCodeType,
+      selectedAirport.terminal,
+    );
+    notify('주차장 정보를 업데이트했습니다.');
   };
 
   useEffect(() => {
     fetchData(DEFAULT_CODE, TERMINAL.T1);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -91,8 +103,11 @@ export function Parking() {
           </Styled.TitleWrapper>
           <Styled.RefreshWrapper>
             <Styled.RefreshDesc>
-              {new Date().toLocaleString('en-US', { hour12: true, hour: 'numeric', minute: 'numeric' })}
-              {' '}
+              {new Date().toLocaleString('en-US', {
+                hour12: true,
+                hour: 'numeric',
+                minute: 'numeric',
+              })}
               업데이트 됨
             </Styled.RefreshDesc>
             <IconButton
@@ -110,14 +125,15 @@ export function Parking() {
             />
           </Styled.RefreshWrapper>
         </Styled.TitleContainer>
-        {parking.map(
-          (v: ParkingDataType) => (
-            <Styled.CongestionBarWrapper key={v.name}>
-              <Styled.CongestionBarTitle>{PARKING_NAME[v.name as keyof typeof PARKING_NAME] || '기타'}</Styled.CongestionBarTitle>
-              <CongestionBar remain={v.remain} all={v.all} />
-            </Styled.CongestionBarWrapper>
-          ),
-        )}
+        {parking.map((v: ParkingDataType) => (
+          <Styled.CongestionBarWrapper key={v.name}>
+            <Styled.CongestionBarTitle>
+              {PARKING_NAME[v.name as keyof typeof PARKING_NAME] || '기타'}
+            </Styled.CongestionBarTitle>
+            <CongestionBar remain={v.remain} all={v.all} />
+          </Styled.CongestionBarWrapper>
+        ))}
+        <ParkingPrice />
       </Styled.CongestionBarContainer>
     </Styled.Wrapper>
   );
