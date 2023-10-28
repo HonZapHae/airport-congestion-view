@@ -2,6 +2,7 @@ import axios from 'axios';
 import { OpenApiAirPortUrls } from '../openApiUrls';
 
 export type IncheonCongestionData = {
+  [key:string]: string;
   adate: string;
   atime: string;
   t1sum1: string;
