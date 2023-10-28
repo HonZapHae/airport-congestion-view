@@ -24,7 +24,7 @@ const theme = createTheme({
 
 export function Navbar() {
   const [value, setValue] = useState(0);
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+  const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
     localStorage.setItem('tabs', `${newValue}`);
     setValue(newValue);
   };
