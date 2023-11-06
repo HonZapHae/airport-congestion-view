@@ -28,7 +28,9 @@ export default defineConfig(({mode}) => {
           name: 'Airport Congestion View',
           short_name: '혼잡행',
           description: '여기저기 흩어져있는 공항 혼잡도 정보, 찾을 수 없는 국내 공항 정보까지 한곳에서 알아보자. 주차부터 출국까지 당신의 여유로운 출발을 응원합니다.',
-          theme_color: "#631EC6",
+          theme_color: "#631ec6",
+          background_color: "631ec6",
+          display: "standalone",
           icons: [
             {
               src: 'icons/logo64.png',
