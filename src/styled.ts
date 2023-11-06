@@ -8,6 +8,7 @@ export const Background = styled.div`
   justify-content: center;
   overflow-y: hidden;
   background-color: #fcfcfc;
+  position: relative;
 `;
 
 export const GlobalStyles = css`

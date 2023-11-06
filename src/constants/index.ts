@@ -129,3 +129,5 @@ export const TERMINAL = {
 } as const;
 
 export type TerminalType = typeof TERMINAL[keyof typeof TERMINAL];
+
+export const SPLASH_TIME = 1000; // ms
