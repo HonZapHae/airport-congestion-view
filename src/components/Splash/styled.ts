@@ -51,6 +51,7 @@ export const Bar = styled.div`
   width: 100%;
   max-width: 500px;
   height: 4px;
+  margin: 0 auto;
   box-sizing: border-box;
   display: flex;
   align-items: flex-start;
