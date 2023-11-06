@@ -15,7 +15,7 @@ export default defineConfig(({mode}) => {
       tsconfigPaths(),
       VitePWA({
         devOptions: { 
-          enabled: true,
+          enabled: false,
         }, // generate web app manifest on dev mode
         includeAssets: [
           'favicon.ico',
