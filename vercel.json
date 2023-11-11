@@ -1,8 +1,8 @@
 {
     "rewrites": [
       {
-        "source": "/inappv5/entry-pc",
-        "destination": "https://app.map.naver.com/inappv5/entry-pc"
+        "source": "/inappv5/entry-pc/:path*",
+        "destination": "https://app.map.naver.com/inappv5/entry-pc/:path*"
       }
     ]
   }
