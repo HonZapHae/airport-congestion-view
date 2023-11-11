@@ -8,9 +8,10 @@ type Props = {
 
 function CongestionBar(props: Props) {
   const { remain, all } = props;
+  const isAvailable = !!all && remain > 0;
   return (
     <Styled.CongestionBarArea>
-      {!!all
+      {isAvailable
         && (
           <Styled.NumofCar
             carnum={all - remain}
@@ -20,17 +21,17 @@ function CongestionBar(props: Props) {
           </Styled.NumofCar>
         )}
       <Styled.Numbubble>
-        <Styled.NumbubbleText>{all ? remain : 0}</Styled.NumbubbleText>
-        <Bubbleicon fill={!all ? '#FF4A4A' : '#9837F9'} />
+        <Styled.NumbubbleText>{isAvailable ? remain : 0}</Styled.NumbubbleText>
+        <Bubbleicon fill={!isAvailable ? '#FF4A4A' : '#9837F9'} />
       </Styled.Numbubble>
       <Styled.CongestionBarWrapper>
         <Styled.CongestionBar
-          carnum={!all ? 1 : all - remain}
-          parkingTotal={!all ? 1 : all}
-          full={!all}
+          carnum={!isAvailable ? 1 : all - remain}
+          parkingTotal={!isAvailable ? 1 : all}
+          full={!isAvailable}
         />
       </Styled.CongestionBarWrapper>
-      <Styled.NumofParking>{!all ? '만차' : all}</Styled.NumofParking>
+      <Styled.NumofParking>{!isAvailable ? '만차' : all}</Styled.NumofParking>
     </Styled.CongestionBarArea>
   );
 }
